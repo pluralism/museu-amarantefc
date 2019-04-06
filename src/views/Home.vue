@@ -28,6 +28,7 @@
       <main>
         <div class="history">
           <div class="history__header">
+            <img class="history__header--logo" src="../assets/logo_amarantefc.png" alt="Amarante FC">
             <div class="history__header--intro">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere condimentum lectus vitae aliquam. Donec magna sem, pretium sed congue eu, egestas at ligula.</p>
             </div>
@@ -35,6 +36,19 @@
 
           <div class="history__timeline">
             <ul>
+              <li>
+                <h5>2011</h5>
+                <div class="history__timeline--item">
+                  <div class="text">
+                    <p>A época foi absolutamente memorável, com os Dragões a juntar ao título europeu as conquistas da Liga portuguesa (com 21 pontos de avanço sobre o segundo classificado, o Benfica, uma margem recorde), da Taça de Portugal e da Supertaça. O título português – conseguido sem derrotas, algo inédito no clube – foi selado a 3 de abril, com um triunfo por 2-1 no Estádio da Luz, terreno do anterior campeão.</p>
+                  </div>
+
+                  <div class="image">
+                    <img src="https://files.app.fcporto.pt/sources/5c8d16596431avBEUs2KtWzLqRf9z.png" alt="Timeline Image">
+                  </div>
+                </div>
+              </li>
+
               <li>
                 <h5>2011</h5>
                 <div class="history__timeline--item">
@@ -143,10 +157,15 @@ export default class Home extends Vue {}
       &__header {
         text-align: center;
 
+        &--logo {
+          height: 20rem;
+        }
+
         &--intro {
           position: relative;
           font-size: 2.4rem;
           font-weight: 600;
+          padding-top: 4.5rem;
           padding-bottom: 4.5rem;
 
           &::after {
@@ -163,6 +182,9 @@ export default class Home extends Vue {}
         }
       }
 
+      //////////////////////////////////////////////////////////////////
+      // TIMELINE
+      //////////////////////////////////////////////////////////////////
       &__timeline {
         padding-top: 4.5rem;
 
@@ -181,7 +203,56 @@ export default class Home extends Vue {}
             color: #2c272f;
             margin-top: -1.1rem;
             padding: 0 2rem;
+          }
+        }
 
+        li:nth-child(even) {
+          h5 {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-100%);
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: #2c272f;
+            margin-top: -1.1rem;
+            padding: 0 2rem;
+
+            &::before {
+              position: absolute;
+              content: "";
+              width: 1rem;
+              height: 1rem;
+              border-radius: 50%;
+              background: #000;
+              right: -0.4rem;
+              top: .6rem;
+            }
+          }
+
+          .history__timeline--item {
+            .text {
+              order: 1;
+            }
+
+            .image {
+              order: 0;
+
+              &::after {
+                position: absolute;
+                content: "";
+                display: block;
+                width: .2rem;
+                height: 100%;
+                top: 0;
+                right: 0;
+                background: rgba(0,166,240,.2);
+              }
+            }
+          }
+        }
+
+        li:nth-child(odd) {
+          h5 {
             &::before {
               position: absolute;
               content: "";
@@ -191,6 +262,27 @@ export default class Home extends Vue {}
               background: #000;
               left: -0.6rem;
               top: .6rem;
+            }
+          }
+
+          .history__timeline--item {
+            .text {
+              order: 0;
+
+              &::after {
+                position: absolute;
+                content: "";
+                display: block;
+                width: .2rem;
+                height: 100%;
+                top: 0;
+                right: 0;
+                background: rgba(0,166,240,.2);
+              }
+            }
+
+            .image {
+              order: 1;
             }
           }
         }
@@ -206,20 +298,10 @@ export default class Home extends Vue {}
             font-weight: 400;
             font-size: 1.4rem;
             color: #2c272f;
-
-            &::after {
-              position: absolute;
-              content: "";
-              display: block;
-              width: .2rem;
-              height: 100%;
-              top: 0;
-              right: 0;
-              background: rgba(0,166,240,.2);
-            }
           }
 
           .image {
+            position: relative;
             width: 50%;
             padding: 0 2rem;
           }
