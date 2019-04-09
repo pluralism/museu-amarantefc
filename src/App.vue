@@ -8,9 +8,7 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600");
 
 :root {
-  --color-primary: #eb2f64;
-  --color-primary-light: #2C272F;
-  --color-primary-dark: #1A131E;
+  --color-primary: #3c272f;
 }
 
 * {
@@ -33,8 +31,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   line-height: 1.6;
-  background-image: linear-gradient(#191919, #434343);
-  // background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
+  background-color: var(--color-primary);
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;

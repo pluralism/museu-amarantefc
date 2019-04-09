@@ -37,113 +37,72 @@
           <div class="history__timeline">
             <ul class="history__timeline__list">
               <li class="history__timeline__list__item">
-                <h5>2011</h5> 
+                <h5>1923</h5> 
                 
                 <div class="history__timeline__list__item__container">
                   <div class="text">
-                    <p>A época foi absolutamente memorável, com os Dragões a juntar ao título europeu as conquistas da Liga portuguesa (com 21 pontos de avanço sobre o segundo classificado, o Benfica, uma margem recorde), da Taça de Portugal e da Supertaça. O título português – conseguido sem derrotas, algo inédito no clube – foi selado a 3 de abril, com um triunfo por 2-1 no Estádio da Luz, terreno do anterior campeão.</p>
+                    <p>Pompeu da Cunha Brochado foi o primeiro Presidente do clube, com apenas 19 anos. O campo de jogos do Amarante Futebol Clube, nos anos de 1923 e 1924 foi o campo da Praça. No dia 31 de Maio de 1923, o AFC fez o seu primeiro jogo contra o Santa Natália F.C. em que o Amarante venceu por 4-0.</p>
                   </div>
 
                   <div class="image">
-                    <img src="https://files.app.fcporto.pt/sources/5c8d16596431avBEUs2KtWzLqRf9z.png" alt="Timeline Image">
+                    <img src="http://www.pauloteixeira.net/amarantefc/wp-content/uploads/2010/07/logotipo.jpg" alt="Timeline Image">
                   </div>
                 </div>
               </li>
 
               <li class="history__timeline__list__item">
-                <h5>2011</h5> 
+                <h5>1924</h5> 
                 
                 <div class="history__timeline__list__item__container">
                   <div class="text">
-                    <p>A época foi absolutamente memorável, com os Dragões a juntar ao título europeu as conquistas da Liga portuguesa (com 21 pontos de avanço sobre o segundo classificado, o Benfica, uma margem recorde), da Taça de Portugal e da Supertaça. O título português – conseguido sem derrotas, algo inédito no clube – foi selado a 3 de abril, com um triunfo por 2-1 no Estádio da Luz, terreno do anterior campeão.</p>
+                    <p>Adelino Bacelar foi eleito Presidente do Clube. Dr. António Vahia foi Presidente do clube para a época 1925/26 e foi sob a sua presidência que o Amarante F.C., em 1925, conseguiu obter dos Serviços Florestais, por intermédio do Dr. Largo Cerqueira, e com o melhor acolhimento dos Engenheiros Florestais Luiz Virgolino, Rocha e Reimão, a cedência de uma faixa de terreno no Parque Florestal, com a superfície de 100 por 60 metros, para o seu campo desportivo.</p>
                   </div>
 
                   <div class="image">
-                    <img src="https://files.app.fcporto.pt/sources/5c8d16596431avBEUs2KtWzLqRf9z.png" alt="Timeline Image">
+                    <img src="http://www.pauloteixeira.net/amarantefc/wp-content/uploads/2010/07/0025-campodafeira.jpg" alt="Timeline Image">
                   </div>
                 </div>
               </li>
 
               <li class="history__timeline__list__item">
-                <h5>2011</h5> 
+                <h5>1925</h5> 
                 
                 <div class="history__timeline__list__item__container">
                   <div class="text">
-                    <p>A época foi absolutamente memorável, com os Dragões a juntar ao título europeu as conquistas da Liga portuguesa (com 21 pontos de avanço sobre o segundo classificado, o Benfica, uma margem recorde), da Taça de Portugal e da Supertaça. O título português – conseguido sem derrotas, algo inédito no clube – foi selado a 3 de abril, com um triunfo por 2-1 no Estádio da Luz, terreno do anterior campeão.</p>
+                    <p>O AFC joga no campo da Florestal – campo de jogos inaugurado em 12 de Julho de 1925 – um encontro de futebol entre o Amarante F.C. e o Voluntário F.C. de Vila Real. O resultado foi de 4-3, favorável ao Amarante.</p>
                   </div>
 
                   <div class="image">
-                    <img src="https://files.app.fcporto.pt/sources/5c8d16596431avBEUs2KtWzLqRf9z.png" alt="Timeline Image">
+                    <img src="http://www.pauloteixeira.net/amarantefc/wp-content/uploads/2010/07/0035-equipa32_33.jpg" alt="Timeline Image">
                   </div>
                 </div>
               </li>
 
               <li class="history__timeline__list__item">
-                <h5>2011</h5> 
+                <h5>1931</h5> 
                 
                 <div class="history__timeline__list__item__container">
                   <div class="text">
-                    <p>A época foi absolutamente memorável, com os Dragões a juntar ao título europeu as conquistas da Liga portuguesa (com 21 pontos de avanço sobre o segundo classificado, o Benfica, uma margem recorde), da Taça de Portugal e da Supertaça. O título português – conseguido sem derrotas, algo inédito no clube – foi selado a 3 de abril, com um triunfo por 2-1 no Estádio da Luz, terreno do anterior campeão.</p>
+                    <p>Tenente Manuel Pereira é eleito presidente do clube, para as épocas de 1931/33. As instalações desportivas do Amarante F. C., desde Julho de 1931 até Janeiro de 1934, são no campo da Feira. Depois de um interregno, o Amarante Futebol Clube reaparece em Julho de 1931 contra uma Selecção de Penafiel. O Amarante venceu o desafio por 12 – 0.</p>
                   </div>
 
                   <div class="image">
-                    <img src="https://files.app.fcporto.pt/sources/5c8d16596431avBEUs2KtWzLqRf9z.png" alt="Timeline Image">
+                    <img src="http://www.pauloteixeira.net/amarantefc/wp-content/uploads/2010/07/0038-equipa34_35.jpg" alt="Timeline Image">
                   </div>
                 </div>
               </li>
 
               <li class="history__timeline__list__item">
-                <h5>2011</h5> 
+                <h5>1944</h5> 
                 
                 <div class="history__timeline__list__item__container">
                   <div class="text">
-                    <p>A época foi absolutamente memorável, com os Dragões a juntar ao título europeu as conquistas da Liga portuguesa (com 21 pontos de avanço sobre o segundo classificado, o Benfica, uma margem recorde), da Taça de Portugal e da Supertaça. O título português – conseguido sem derrotas, algo inédito no clube – foi selado a 3 de abril, com um triunfo por 2-1 no Estádio da Luz, terreno do anterior campeão.</p>
+                    <p>Reaparece o clube em 23 de Janeiro de 1944, depois de um interregno de dois anos. D. Manuel Lobo da Silveira (Alvito), é eleito presidente do clube para o ano de 1944. Amadeu Faria é eleito presidente do clube, para os anos de 1945 e 1946. Inserido nas Festas do Junho de 1945, o Amarante Futebol Clube recebe a Associação Académica de Coimbra.</p>
+                    <p>Eng. Manuel Van Zeller Macedo é eleito presidente do clube para os anos de 1947 e 1948. Teófilo da Mota Freitas é eleito presidente do clube para o ano de 1949. Dr. Luís Van Zeller Macedo é eleito presidente do clube para o ano de 1950. Dr. José Soares Queiroz é eleito presidente do clube para o ano de 1951 e para a época 1952/53.</p>
                   </div>
 
                   <div class="image">
-                    <img src="https://files.app.fcporto.pt/sources/5c8d16596431avBEUs2KtWzLqRf9z.png" alt="Timeline Image">
-                  </div>
-                </div>
-              </li>
-
-              <li class="history__timeline__list__item">
-                <h5>2011</h5> 
-                
-                <div class="history__timeline__list__item__container">
-                  <div class="text">
-                    <p>A época foi absolutamente memorável, com os Dragões a juntar ao título europeu as conquistas da Liga portuguesa (com 21 pontos de avanço sobre o segundo classificado, o Benfica, uma margem recorde), da Taça de Portugal e da Supertaça. O título português – conseguido sem derrotas, algo inédito no clube – foi selado a 3 de abril, com um triunfo por 2-1 no Estádio da Luz, terreno do anterior campeão.</p>
-                  </div>
-
-                  <div class="image">
-                    <img src="https://files.app.fcporto.pt/sources/5c8d16596431avBEUs2KtWzLqRf9z.png" alt="Timeline Image">
-                  </div>
-                </div>
-              </li>
-
-              <li class="history__timeline__list__item">
-                <h5>2011</h5> 
-                
-                <div class="history__timeline__list__item__container">
-                  <div class="text">
-                    <p>A época foi absolutamente memorável, com os Dragões a juntar ao título europeu as conquistas da Liga portuguesa (com 21 pontos de avanço sobre o segundo classificado, o Benfica, uma margem recorde), da Taça de Portugal e da Supertaça. O título português – conseguido sem derrotas, algo inédito no clube – foi selado a 3 de abril, com um triunfo por 2-1 no Estádio da Luz, terreno do anterior campeão.</p>
-                  </div>
-
-                  <div class="image">
-                    <img src="https://files.app.fcporto.pt/sources/5c8d16596431avBEUs2KtWzLqRf9z.png" alt="Timeline Image">
-                  </div>
-                </div>
-              </li>
-
-              <li class="history__timeline__list__item">
-                <h5>2011</h5> 
-                
-                <div class="history__timeline__list__item__container">
-                  <div class="text">
-                    <p>A época foi absolutamente memorável, com os Dragões a juntar ao título europeu as conquistas da Liga portuguesa (com 21 pontos de avanço sobre o segundo classificado, o Benfica, uma margem recorde), da Taça de Portugal e da Supertaça. O título português – conseguido sem derrotas, algo inédito no clube – foi selado a 3 de abril, com um triunfo por 2-1 no Estádio da Luz, terreno do anterior campeão.</p>
-                  </div>
-
-                  <div class="image">
-                    <img src="https://files.app.fcporto.pt/sources/5c8d16596431avBEUs2KtWzLqRf9z.png" alt="Timeline Image">
+                    <img src="http://www.pauloteixeira.net/amarantefc/wp-content/uploads/2010/07/0032-equipa1952_53.jpg" alt="Timeline Image">
                   </div>
                 </div>
               </li>
@@ -151,6 +110,64 @@
           </div>
         </div>
       </main>
+
+      <footer class="footer">
+        <div class="footer__logo-box">
+          <picture class="footer__logo">
+            <img src="../assets/logo_museu.png">
+          </picture>
+        </div>
+
+        <div class="footer__contact-box">
+          <ul class="footer__contact-list">
+            <li>
+              <div class="contact-title">
+                <span>Secretaria do AFC</span>
+              </div>
+
+              <div class="contact-description">
+                <span>Estádio Municipal</span>
+                <span>Av.Teixeira de Pascoaes</span>
+                <span>4600-632 Gatão</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="contact-title">
+                <span>Receção de correspondência</span>
+              </div>
+
+              <div class="contact-description">
+                <span>Apartado 298</span>
+                <span>4601-909 Amarante</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="contact-title">
+                <span>Outros Contactos</span>
+              </div>
+
+              <div class="contact-description">
+                <span>Telefone/Fax: +351 255 425 493</span>
+                <span>Telemóvel: +351 964 819 490</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="contact-title">
+                <span>Endereços de e-mail</span>
+              </div>
+
+              <div class="contact-description">
+                <span>Geral: <a class="contact-email" href="mailto:amarantfclube@sapo.pt">amarantfclube@sapo.pt</a></span>
+                <span>Gonçalinhos: <a class="contact-email" href="mailto:goncalinhos@amarantefc.pt">goncalinhos@amarantefc.pt</a></span>
+                <span>Secção de Montanhismo: <a class="contact-email" href="mailto:afcmontanhismo@sapo.pt">afcmontanhismo@sapo.pt</a></span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </footer>
     </div>
   </div>
 </template>
@@ -171,7 +188,7 @@ export default class Home extends Vue {}
     content: "";
     display: block;
     width: .2rem;
-    height: 100%;
+    height: calc(100% + 3rem);
     top: 0;
     right: 0;
     background: rgba(0,166,240,.2);
@@ -293,6 +310,7 @@ export default class Home extends Vue {}
 
           &__item { // "li" element
             position: relative;
+            padding-bottom: 3rem;
 
             h5 {
               position: absolute;
@@ -302,6 +320,7 @@ export default class Home extends Vue {}
               color: #2c272f;
               margin-top: -1.1rem;
               padding: 0 2rem;
+              z-index: 1;
 
               &::before {
                 position: absolute;
@@ -331,6 +350,10 @@ export default class Home extends Vue {}
                 position: relative;
                 width: 50%;
                 padding: 0 2rem;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
               }
             }
           }
@@ -381,6 +404,60 @@ export default class Home extends Vue {}
                 }
               }
             }
+          }
+        }
+      }
+    }
+
+    ///////////////////////////////////////////////////////////////////////
+    // FOOTER
+    ///////////////////////////////////////////////////////////////////////
+    .footer {
+      background-color: #333;
+      padding: 10rem 0;
+      color: #f7f7f7;
+      font-size: 1.4rem;
+
+      &__logo-box {
+        text-align: center;
+        margin-bottom: 8rem;
+      }
+
+      &__logo {
+       & > img {
+          width: 25rem;
+          height: auto;
+        }
+      }
+
+      &__contact-box {
+        width: 80%;
+        margin: 0 auto;
+        border-top: 1px solid #777;
+        padding-top: 2rem;
+      }
+
+      &__contact-list {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+
+        li {
+          .contact-title {
+            span {
+              font-size: 1.6rem;
+              font-weight: 600;
+            }
+          }
+
+          .contact-description {
+            display: flex;
+            flex-direction: column;
+          }
+
+          .contact-email {
+            color: #aaa;
+            text-decoration: none;
           }
         }
       }
