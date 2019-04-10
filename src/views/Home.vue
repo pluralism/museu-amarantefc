@@ -14,6 +14,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import History from '@/views/History.vue';
+
 import Footer from '@/components/Footer.vue';
 import Header from '@/components/Header.vue';
 
