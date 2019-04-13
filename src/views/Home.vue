@@ -15,17 +15,18 @@
 import { Component, Vue } from 'vue-property-decorator';
 import History from '@/views/History.vue';
 import Schedule from '@/views/Schedule.vue';
+import EventDetails from '@/views/EventDetails.vue';
 
 import Footer from '@/components/Footer.vue';
 import Header from '@/components/Header.vue';
 
 @Component({
-  components: { History, Schedule, Header, Footer },
+  components: { History, Schedule, EventDetails, Header, Footer },
 })
 export default class Home extends Vue {
   data() {
     return {
-      currentPage: 'schedule'
+      currentPage: 'eventDetails'
     };
   }
 }
