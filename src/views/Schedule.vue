@@ -1,0 +1,184 @@
+<template>
+    <div class="schedule">
+        <header class="schedule__header">
+            <div class="schedule__month">Abril 2019</div>
+        </header>
+
+        <div class="schedule__events">
+            <div class="schedule__events__day">
+                <div class="schedule__events__day__header">
+                    <div class="details">
+                        <span class="day">
+                            01<span class="weekday">SEG</span>
+                        </span>
+                    </div>
+                </div>
+
+                <ul class="schedule__events__day__list">
+                    <li class="event">
+                        <div class="event__details">
+                            <div class="left">
+                                <div class="date">
+                                    <span>21:00</span>
+                                </div>
+                            </div>
+
+                            <div class="right">
+                                <div class="name">
+                                    <span>CB Eborense VS Sporting CP B</span>
+                                </div>
+
+                                <div class="description">
+                                    <span>Carambola - 14.ª Jorn. Zona Sul Camp. Nac. 1.ª Divisão, Clube de Bilhar Eborense (Évora)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="event__actions">
+                            <div class="event__actions__details">
+                                <a href="#">
+                                    <span>Ver detalhes</span>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator';
+
+@Component({ name: 'schedule' })
+export default class Schedule extends Vue { }
+</script>
+
+<style lang="scss">
+    .schedule {
+        padding: 8rem;
+
+        &__header {
+            background-color: #202221;
+            color: #fff;
+            margin-bottom: 3rem;
+        }
+
+        &__month {
+            font-size: 1.6rem;
+            font-weight: 600;
+            text-transform: capitalize;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            padding-left: 3rem;
+            letter-spacing: .25rem;
+        }
+
+        &__events {
+            &__day {
+                &__header {
+                    position: relative;
+                    font-size: 4rem;
+                    font-weight: 600;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        height: 1px;
+                        width: 100%;
+                        top: 50%;
+                        background-color: #ddd;
+                    }
+
+                    & > .details {
+                        position: relative;
+                        margin-left: 3.5rem;
+                        text-align: center;
+                        color: #202221;
+
+                        & > .day {
+                            background-color: #fff;
+                            display: block;
+                            width: 7rem;
+                            padding: 0 .5rem;
+                            line-height: 1;
+
+                            & > .weekday {
+                                display: block;
+                                font-size: 1.5rem;
+                                font-weight: 300;
+                            }
+                        }
+                    }
+                }
+
+                &__list {
+                    list-style: none;
+                }
+
+                .event {
+                    display: flex;
+                    flex-direction: column;
+
+                    &:not(:last-of-type) {
+                        padding-bottom: 4rem;
+                    }
+
+                    &__details {
+                        display: flex;
+                        & > .left {
+                            flex-basis: 10%;
+                            display: flex;
+                            align-items: center;
+                            font-size: 1.4rem;
+                            font-weight: 600;
+
+                            & > .date {
+                                width: 100%;
+                                color: #9ea3a1;
+                                text-align: right;
+                            }
+                        }
+
+                        & > .right {
+                            padding-left: 3rem;
+                            width: 100%;
+                            
+                            & > .name {
+                                font-size: 2.5rem;
+                                font-weight: 600;
+                                color: #04b46b;
+                            }
+
+                            & > .description {
+                                font-size: 1.4rem;
+                                color: #9ea3a1;
+                            }
+                        }
+                    }
+
+                    &__actions {
+                        display: flex;
+
+                        &__details {
+                            margin-top: 1.5rem;
+                            margin-left: auto;
+
+                            & > a {
+                                text-decoration: none;
+                                padding: 1rem 2rem;
+                                border: 1px solid #04b46b;
+                                border-radius: 3px;
+                                color: #04b46b;
+                                font-size: 1.4rem;
+                                font-weight: 600;
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+</style>

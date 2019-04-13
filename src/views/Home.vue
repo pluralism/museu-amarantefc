@@ -4,7 +4,7 @@
     
     <div class="content">
       <main>
-        <History v-if="currentPage === 'history'" />
+        <component :is="currentPage"></component>
       </main>
       <Footer />
     </div>
@@ -14,17 +14,18 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import History from '@/views/History.vue';
+import Schedule from '@/views/Schedule.vue';
 
 import Footer from '@/components/Footer.vue';
 import Header from '@/components/Header.vue';
 
 @Component({
-  components: { History, Header, Footer },
+  components: { History, Schedule, Header, Footer },
 })
 export default class Home extends Vue {
   data() {
     return {
-      currentPage: 'history'
+      currentPage: 'schedule'
     };
   }
 }
