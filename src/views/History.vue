@@ -109,10 +109,6 @@ export default class History extends Vue {}
       flex-direction: column;
       align-items: center;
 
-      @media only screen and (max-width: 1000px) {
-        padding: 8rem 2rem;
-      }
-
       &__header {
         text-align: center;
 
