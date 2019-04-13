@@ -19,7 +19,7 @@
                 <p>As tradições da Páscoa inspiram a partilha dos melhores sentimentos. Nesta oficina em Domingo de Ramos, a criatividade das crianças e a ajuda dos adultos vai revelar-se em vasos muito curiosos, onde as plantas têm forma de ovo de dragão e as decorações fazem lembrar os melhores sentimentos que unem padrinhos e afilhados. Estas criações até podem resultar numa bela oferta nesta quadra. Concebida e organizada a pensar na participação das famílias, a atividade tem a marca de referência do Serviço Educativo do Museu FC Porto</p>
                 <p><b>Horários:</b> 10H30-12H00</p>
                 <p><b>Preço:</b> Preço: 5€ por criança + acompanhante. Acompanhante extra: 2.50€</p>
-                <p><b>Nota:</b> necessária inscrição prévia até às 12h00 da 5.ª feira anterior à oficina.</p>
+                <p><b>Nota:</b>&nbsp;<i>necessária inscrição prévia até às 12h00 da 5.ª feira anterior à oficina.</i></p>
             </div>
 
             <div class="event-details__place">
