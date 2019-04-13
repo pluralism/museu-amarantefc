@@ -1,5 +1,10 @@
 <template>
     <div class="schedule">
+        <div class="schedule__controls">
+            <a href="#" class="controls__prev">&lt;</a>
+            <a href="#" class="controls__next">&gt;</a>
+        </div>
+
         <header class="schedule__header">
             <div class="schedule__month">Abril 2019</div>
         </header>
@@ -25,7 +30,35 @@
 
                             <div class="right">
                                 <div class="name">
-                                    <span>CB Eborense VS Sporting CP B</span>
+                                    <span>Leixões x Amarante FC</span>
+                                </div>
+
+                                <div class="description">
+                                    <span>Carambola - 14.ª Jorn. Zona Sul Camp. Nac. 1.ª Divisão, Clube de Bilhar Eborense (Évora)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="event__actions">
+                            <div class="event__actions__details">
+                                <a href="#">
+                                    <span>Ver detalhes</span>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="event">
+                        <div class="event__details">
+                            <div class="left">
+                                <div class="date">
+                                    <span>21:00</span>
+                                </div>
+                            </div>
+
+                            <div class="right">
+                                <div class="name">
+                                    <span>Perafita x Amarante FC</span>
                                 </div>
 
                                 <div class="description">
@@ -59,9 +92,33 @@ export default class Schedule extends Vue { }
     .schedule {
         padding: 8rem;
 
+        &__controls {
+            display: flex;
+            font-size: 2rem;
+
+            a {
+                text-decoration: none;
+                cursor: pointer;
+                text-align: center;
+                color: #202221;
+
+                padding: 1rem 2rem;
+                border-radius: .2rem;
+                border: 1px solid #dfe1e0;
+                transition: all .3s ease-in-out;
+
+                &:hover {
+                    background-color: #202221;
+                    color: #04b46b;
+                    transition: all .3s ease-in-out;
+                }
+            }
+        }
+
         &__header {
             background-color: #202221;
             color: #fff;
+            margin-top: 4rem;
             margin-bottom: 3rem;
         }
 
