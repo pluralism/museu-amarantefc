@@ -92,12 +92,12 @@ export default class History extends Vue {}
 
 
 <style lang="scss">
-    @mixin timelineBar() {
+    @mixin timelineBar($padding) {
         position: absolute;
         content: "";
         display: block;
         width: .2rem;
-        height: calc(100% + 3rem);
+        height: calc(100% + #{$padding} * 1rem);
         top: 0;
         right: 0;
         background: rgba(0,166,240,.2);
@@ -214,6 +214,14 @@ export default class History extends Vue {}
                 }
               }
 
+              &:last-of-type {
+                .history__timeline__list__item__container {
+                  .image::after {
+                    @include timelineBar(0);
+                  }
+                }
+              }
+
               .history__timeline__list__item__container {
                 .text {
                   order: 1;
@@ -223,7 +231,7 @@ export default class History extends Vue {}
                   order: 0;
 
                   &::after {
-                    @include timelineBar();
+                    @include timelineBar(3);
                   }
                 }
               }
@@ -236,12 +244,20 @@ export default class History extends Vue {}
                 }
               }
 
+              &:last-of-type {
+                .history__timeline__list__item__container {
+                  .text::after {
+                    @include timelineBar(0);
+                  }
+                }
+              }
+
               .history__timeline__list__item__container {
                 .text {
                   order: 0;
 
                   &::after {
-                    @include timelineBar();
+                    @include timelineBar(3);
                   }
                 }
 
