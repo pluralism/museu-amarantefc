@@ -27,7 +27,7 @@ import Header from '@/components/Header.vue';
 export default class Home extends Vue {
   data() {
     return {
-      currentPage: 'gallery'
+      currentPage: 'schedule'
     };
   }
 }
