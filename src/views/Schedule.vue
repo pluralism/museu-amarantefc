@@ -45,7 +45,7 @@
                     <div class="calendar__days__item">12</div>
                     <div class="calendar__days__item">13</div>
                     <div class="calendar__days__item">14</div>
-                    <div class="calendar__days__item">15</div>
+                    <div class="calendar__days__item calendar__days__item--today">15</div>
                     <div class="calendar__days__item">16</div>
                     <div class="calendar__days__item">17</div>
                     <div class="calendar__days__item">18</div>
@@ -197,6 +197,9 @@ export default class Schedule extends Vue { }
         }
 
         &__days {
+            position: relative;
+            z-index: 1;
+
             display: grid;
             grid-template-columns: repeat(7, 1fr);
 
@@ -218,6 +221,27 @@ export default class Schedule extends Vue { }
 
                 &--next-month {
                     color: #202221;
+                }
+
+                &--today {
+                    position: relative;
+                    color: rgb(190, 186, 186);
+                    font-weight: 600;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 4rem;
+                        height: 4rem;
+                        top: 50%;
+                        left: 50%;
+
+                        transform: translateX(-50%) translateY(-50%);
+                        border: 2px solid #202221;
+                        border-radius: 50%;
+                        background-color: #202221;
+                        z-index: -1;
+                    }
                 }
             }
         }
