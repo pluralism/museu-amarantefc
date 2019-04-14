@@ -55,6 +55,7 @@ export default class Header extends Vue {}
     }
 
     .submenu {
+      z-index: 2;
       visibility: hidden;
       opacity: 0;
       
