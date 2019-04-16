@@ -1,5 +1,7 @@
 <template>
     <div class="page">
+        <div class="loading-ring"></div>
+
         <div class="calendar">
             <Calendar />
         </div>
@@ -93,8 +95,45 @@ export default class Schedule extends Vue { }
 
 <style lang="scss">
     .page {
+        z-index: 0;
+        position: relative;
         display: flex;
         padding: 8rem 3rem;
+    }
+
+    .loading-ring {
+        $size: 6.4rem;
+
+        position: absolute;
+        z-index: 3;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .5);
+
+        &::after {
+            position: absolute;
+            content: "";
+            width: $size;
+            height: $size;
+            top: calc(50% - #{$size / 2});
+            left: calc(50% - #{$size / 2});
+            border: 5px solid;
+            border-color: #fff transparent #fff transparent;
+            border-radius: 50%;
+            animation: lds-dual-ring 1.2s linear infinite;
+        }
+    }
+
+    @keyframes lds-dual-ring {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
     }
 
     .calendar {
