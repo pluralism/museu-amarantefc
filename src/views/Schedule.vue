@@ -1,6 +1,6 @@
 <template>
     <div class="page">
-        <div class="loading-ring"></div>
+        <!-- <div class="loading-ring"></div> -->
 
         <div class="calendar">
             <Calendar />
@@ -122,7 +122,7 @@ export default class Schedule extends Vue { }
             border: 5px solid;
             border-color: #fff transparent #fff transparent;
             border-radius: 50%;
-            animation: lds-dual-ring 1.2s linear infinite;
+            animation: lds-dual-ring 1.2s ease-in-out infinite;
         }
     }
 
