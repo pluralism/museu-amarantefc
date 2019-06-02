@@ -7,21 +7,19 @@
         </div>
 
         <section class="presidents-list__table">
-            <div>
-                <div class="presidents-list__table__head">
-                    <div class="presidents-list__table__head__period">
-                        <span>Período</span>
-                    </div>
-                    <div class="presidents-list__table__head__name">
-                        <span>Nome</span>
-                    </div>
+            <div class="presidents-list__table__head">
+                <div class="presidents-list__table__head__period">
+                    <span>Período</span>
                 </div>
+                <div class="presidents-list__table__head__name">
+                    <span>Nome</span>
+                </div>
+            </div>
 
-                <div class="presidents-list__table__body">
-                    <div class="presidents-list__table__row" v-for="president of presidents">
-                        <div>{{ president.interval }}</div>
-                        <div>{{ president.name }}</div>
-                    </div>
+            <div class="presidents-list__table__body">
+                <div class="presidents-list__table__row" v-for="president of presidents">
+                    <div>{{ president.interval }}</div>
+                    <div>{{ president.name }}</div>
                 </div>
             </div>
         </section>
