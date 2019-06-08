@@ -4,6 +4,22 @@
         <ul class="menu-nav">
           <li class="menu-nav__item">
             <span>O Museu</span>
+
+            <div class="submenu">
+              <ul class="submenu-nav">
+                <li class="submenu-nav__item">
+                  <span>História</span>
+                </li>
+
+                <li class="submenu-nav__item">
+                  <span>Instalações</span>
+                </li>
+
+                <li class="submenu-nav__item">
+                  <span>Presidentes</span>
+                </li>
+              </ul>
+            </div>
           </li>
 
           <li class="menu-nav__item">
@@ -58,7 +74,7 @@ export default class Header extends Vue {}
       z-index: 2;
       visibility: hidden;
       opacity: 0;
-      
+
       position: absolute;
       top: 0;
       margin-top: 3.5rem;
@@ -87,7 +103,7 @@ export default class Header extends Vue {}
         }
       }
     }
-    
+
     .menu {
       height: 100%;
       display: flex;
