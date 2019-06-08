@@ -26,12 +26,12 @@ import Footer from '@/components/Footer.vue';
 import Header from '@/components/Header.vue';
 
 @Component({
-  components: { Home, History, Schedule, EventDetails, Gallery, Installations, Header, Footer },
+  components: { Home, History, Schedule, EventDetails, Gallery, Installations, Header, Footer }
 })
 export default class Main extends Vue {
   data() {
     return {
-      currentPage: 'installations'
+      currentPage: 'history'
     };
   }
 }
