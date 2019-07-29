@@ -11,12 +11,29 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Main
+      component: Main,
+      children: [
+        {
+          path: '',
+          component: () => import('./views/History.vue')
+        },
+        {
+          path: 'history',
+          component: () => import('./views/History.vue')
+        },
+        {
+          path: 'presidents',
+          component: () => import('./views/PresidentsList.vue')
+        },
+        {
+          path: 'schedule',
+          component: () => import('./views/Schedule.vue')
+        },
+        {
+          path: 'installations',
+          component: () => import('./views/Installations.vue')
+        }
+      ]
     },
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   component: () => import('./views/About.vue')
-    // }
   ]
 })

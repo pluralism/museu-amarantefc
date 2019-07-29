@@ -4,35 +4,33 @@
 
     <div class="content">
       <main>
-        <component :is="currentPage"></component>
+        <router-view />
       </main>
-
-      <Footer />
     </div>
+
+    <Footer />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
-import Home from '@/views/Home.vue';
-import History from '@/views/History.vue';
-import Schedule from '@/views/Schedule.vue';
-import EventDetails from '@/views/EventDetails.vue';
-import Gallery from '@/views/Gallery.vue';
-import Installations from '@/views/Installations.vue';
+// import Home from '@/views/Home.vue';
+// import History from '@/views/History.vue';
+// import Schedule from '@/views/Schedule.vue';
+// import EventDetails from '@/views/EventDetails.vue';
+// import Gallery from '@/views/Gallery.vue';
+// import Installations from '@/views/Installations.vue';
 
 import Footer from '@/components/Footer.vue';
 import Header from '@/components/Header.vue';
 
 @Component({
-  components: { Home, History, Schedule, EventDetails, Gallery, Installations, Header, Footer }
+  components: { Header, Footer }
 })
 export default class Main extends Vue {
   data() {
-    return {
-      currentPage: 'history'
-    };
+    return {};
   }
 }
 </script>

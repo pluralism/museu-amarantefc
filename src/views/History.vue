@@ -3,79 +3,265 @@
         <div class="history__header">
             <img class="history__header--logo" src="../assets/logo_amarantefc.png" alt="Amarante FC">
             <div class="history__header--intro">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere condimentum lectus vitae aliquam. Donec magna sem, pretium sed congue eu, egestas at ligula.</p>
+                <p>Nesta página poderá ler sobre a história do <i>Amarante FC</i> desde o seu ano de fundação (1923) até à atualidade.</p>
             </div>
         </div>
 
         <div class="history__timeline">
             <ul class="history__timeline__list">
                 <li class="history__timeline__list__item">
-                    <h5>1923</h5> 
-                    
+                    <h5>1923</h5>
+
                     <div class="history__timeline__list__item__container">
                         <div class="text">
-                          <p>Pompeu da Cunha Brochado foi o primeiro Presidente do clube, com apenas 19 anos. O campo de jogos do Amarante Futebol Clube, nos anos de 1923 e 1924 foi o campo da Praça. No dia 31 de Maio de 1923, o AFC fez o seu primeiro jogo contra o Santa Natália F.C. em que o Amarante venceu por 4-0.</p>
+                            <p>No dia 4 de março, é fundado o Amarante FC por intermédio de Pompeu da Cunha Brochado, com apenas 19 anos.</p>
+                            <p>A 31 de maio realiza o Clube o primeiro encontro de futebol. Foi adversário o Stª. Natália, no qual saiu vencedor por 4-0</p>
                         </div>
 
                         <div class="image">
-                          <img src="http://www.pauloteixeira.net/amarantefc/wp-content/uploads/2010/07/logotipo.jpg" alt="Timeline Image">
+                          <img src="../assets/history/1.jpg" alt="Timeline Image">
                         </div>
                     </div>
                 </li>
 
                 <li class="history__timeline__list__item">
-                    <h5>1924</h5> 
-                    
+                    <h5>1935</h5>
+
                     <div class="history__timeline__list__item__container">
                         <div class="text">
-                          <p>Adelino Bacelar foi eleito Presidente do Clube. Dr. António Vahia foi Presidente do clube para a época 1925/26 e foi sob a sua presidência que o Amarante F.C., em 1925, conseguiu obter dos Serviços Florestais, por intermédio do Dr. Largo Cerqueira, e com o melhor acolhimento dos Engenheiros Florestais Luiz Virgolino, Rocha e Reimão, a cedência de uma faixa de terreno no Parque Florestal, com a superfície de 100 por 60 metros, para o seu campo desportivo.</p>
+                          <p>Filia-se pela primeira vez na Associação de Futebol do Porto em 1934. Sagra-se campeão regional da Associação de Futebol do Porto na época de 1934/35.</p>
                         </div>
 
                         <div class="image">
-                          <img src="http://www.pauloteixeira.net/amarantefc/wp-content/uploads/2010/07/0025-campodafeira.jpg" alt="Timeline Image">
+                          <img src="../assets/history/4.png" alt="Timeline Image">
                         </div>
                     </div>
                 </li>
 
                 <li class="history__timeline__list__item">
-                    <h5>1925</h5> 
-                    
+                    <h5>1944</h5>
+
                     <div class="history__timeline__list__item__container">
                         <div class="text">
-                          <p>O AFC joga no campo da Florestal – campo de jogos inaugurado em 12 de Julho de 1925 – um encontro de futebol entre o Amarante F.C. e o Voluntário F.C. de Vila Real. O resultado foi de 4-3, favorável ao Amarante.</p>
+                          <p>Sem competir dois anos, reaparece o Amarante FC, em 23 de janeiro. Sob a presidência de D. Manuel Lobo da Silveira (Alvito) e filia-se novamente na AFP.</p>
                         </div>
 
                         <div class="image">
-                          <img src="http://www.pauloteixeira.net/amarantefc/wp-content/uploads/2010/07/0035-equipa32_33.jpg" alt="Timeline Image">
+                          <img src="../assets/history/5.jpg" alt="Timeline Image">
                         </div>
                     </div>
                 </li>
 
                 <li class="history__timeline__list__item">
-                    <h5>1931</h5> 
-                    
+                    <h5>1953</h5>
+
                     <div class="history__timeline__list__item__container">
                         <div class="text">
-                          <p>Tenente Manuel Pereira é eleito presidente do clube, para as épocas de 1931/33. As instalações desportivas do Amarante F. C., desde Julho de 1931 até Janeiro de 1934, são no campo da Feira. Depois de um interregno, o Amarante Futebol Clube reaparece em Julho de 1931 contra uma Selecção de Penafiel. O Amarante venceu o desafio por 12 – 0.</p>
+                          <p>O Amarante Futebol Clube sobe da 3ª Div. da AFP à 2ª Divisão Distrital, com o título de campeão.</p>
                         </div>
 
                         <div class="image">
-                          <img src="http://www.pauloteixeira.net/amarantefc/wp-content/uploads/2010/07/0038-equipa34_35.jpg" alt="Timeline Image">
+                          <img src="../assets/history/6.jpg" alt="Timeline Image">
                         </div>
                     </div>
                 </li>
 
                 <li class="history__timeline__list__item">
-                    <h5>1944</h5> 
-                    
+                    <h5>1964</h5>
+
                     <div class="history__timeline__list__item__container">
                         <div class="text">
-                          <p>Reaparece o clube em 23 de Janeiro de 1944, depois de um interregno de dois anos. D. Manuel Lobo da Silveira (Alvito), é eleito presidente do clube para o ano de 1944. Amadeu Faria é eleito presidente do clube, para os anos de 1945 e 1946. Inserido nas Festas do Junho de 1945, o Amarante Futebol Clube recebe a Associação Académica de Coimbra.</p>
-                          <p>Eng. Manuel Van Zeller Macedo é eleito presidente do clube para os anos de 1947 e 1948. Teófilo da Mota Freitas é eleito presidente do clube para o ano de 1949. Dr. Luís Van Zeller Macedo é eleito presidente do clube para o ano de 1950. Dr. José Soares Queiroz é eleito presidente do clube para o ano de 1951 e para a época 1952/53.</p>
+                          <p>Torna a subir de escalão o Clube. Agora da 2ª à 1ª Divisão Distrital, novamente com o título de campeão.</p>
                         </div>
 
                         <div class="image">
-                          <img src="http://www.pauloteixeira.net/amarantefc/wp-content/uploads/2010/07/0032-equipa1952_53.jpg" alt="Timeline Image">
+                          <img src="../assets/history/7.jpg" alt="Timeline Image">
+                        </div>
+                    </div>
+                </li>
+
+                <li class="history__timeline__list__item">
+                    <h5>1966</h5>
+
+                    <div class="history__timeline__list__item__container">
+                        <div class="text">
+                            <p>Participa uma vez mais na I Divisão Distrital e conquista o primeiro lugar na série que competiu.
+                                Após obter este título disputou pela primeira vez e última neste ano a III
+                                Divisão Nacional, que era disputado pelos primeiros classificados das séries dos
+                                campeonatos regionais. O primeiro lugar dava acesso à II Divisão Nacional na época
+                                seguinte.</p>
+                        </div>
+
+                        <div class="image">
+                            <img src="../assets/history/8.jpg" alt="Timeline Image">
+                        </div>
+                    </div>
+                </li>
+
+                <li class="history__timeline__list__item">
+                    <h5>1977</h5>
+
+                    <div class="history__timeline__list__item__container">
+                        <div class="text">
+                            <p>Ao fim trinta e nove épocas de competição em campeonatos distritais desde a sua
+                                fundação. O Amarante FC sobe uma vez mais. Após disputar a 1ª Divisão Distrital
+                                sagra-se novamente campeão e consequentemente o direito de competir na 3ª Divisão
+                                Nacional. Estava conseguido um desígnio antigo.</p>
+                        </div>
+
+                        <div class="image">
+                            <img src="../assets/history/9.jpg" alt="Timeline Image">
+                        </div>
+                    </div>
+                </li>
+
+                <li class="history__timeline__list__item">
+                    <h5>1979</h5>
+
+                    <div class="history__timeline__list__item__container">
+                        <div class="text">
+                            <p>Ao subir da 3ª para a 2ª Divisão Nacional, o Amarante FC ascende ao patamar em
+                                termos de competição mais alto da sua história. Conseguiu também a proeza inédita, até
+                                hoje de disputar por três épocas este campeonato ininterruptamente.</p>
+                            <p>No dia 1 de dezembro, atinge na Taça de Portugal um dos momentos mais importantes
+                                de afirmação do Clube, ao empatar no campo da Barroca por 1-1 frente ao Sporting CP.
+                                Obrigando a equipa leonina ao jogo de desempate em Alvalade.</p>
+                        </div>
+
+                        <div class="image">
+                            <img src="../assets/history/10.jpg" alt="Timeline Image">
+                        </div>
+                    </div>
+                </li>
+
+                <li class="history__timeline__list__item">
+                    <h5>1985</h5>
+
+                    <div class="history__timeline__list__item__container">
+                        <div class="text">
+                            <p>Após se sagrar campeão da 3ª Divisão-Série B, sobe uma novamente o AFC à 2ª Divisão Nacional.</p>
+                        </div>
+
+                        <div class="image">
+                            <img src="../assets/history/12.jpg" alt="Timeline Image">
+                        </div>
+                    </div>
+                </li>
+
+                <li class="history__timeline__list__item">
+                    <h5>1988</h5>
+
+                    <div class="history__timeline__list__item__container">
+                        <div class="text">
+                            <p>Repete uma vez mais a subida à 2ª Divisão Nacional.</p>
+                        </div>
+
+                        <div class="image">
+                            <img src="../assets/history/13.jpg" alt="Timeline Image">
+                        </div>
+                    </div>
+                </li>
+
+                <li class="history__timeline__list__item">
+                    <h5>1990</h5>
+
+                    <div class="history__timeline__list__item__container">
+                        <div class="text">
+                            <p>Neste ano dá-se uma restruturação dos campeonatos nacionais, o Amarante FC que
+                                disputou a 3ª Div., consegue o acesso ao campeonato Nacional da 2ª Divisão B zona Norte.</p>
+                        </div>
+
+                        <div class="image">
+                            <img src="../assets/history/14.jpg" alt="Timeline Image">
+                        </div>
+                    </div>
+                </li>
+
+                <li class="history__timeline__list__item">
+                    <h5>1994</h5>
+
+                    <div class="history__timeline__list__item__container">
+                        <div class="text">
+                            <p>O AFC sobe da 3ª Divisão Nacional-Série B, para a 2ª Divisão B zona Norte.</p>
+                        </div>
+
+                        <div class="image">
+                            <img src="../assets/history/1994.png" alt="Timeline Image">
+                        </div>
+                    </div>
+                </li>
+
+                <li class="history__timeline__list__item">
+                    <h5>1998</h5>
+
+                    <div class="history__timeline__list__item__container">
+                        <div class="text">
+                            <p>De volta por uma época à 1ª Div. AFP, consegue este ano o Amarante FC a subida ao campeonato nacional da 3ª Divisão.</p>
+                        </div>
+
+                        <div class="image">
+                            <img src="../assets/history/15.jpg" alt="Timeline Image">
+                        </div>
+                    </div>
+                </li>
+
+                <li class="history__timeline__list__item">
+                    <h5>2006</h5>
+
+                    <div class="history__timeline__list__item__container">
+                        <div class="text">
+                            <p>Ao conseguir o título de campeão no Campeonato Distrital da AF Porto – Divisão de Honra, ascende novamente à 3ª Div. Nacional.</p>
+                        </div>
+
+                        <div class="image">
+                            <img src="../assets/history/2006.png" alt="Timeline Image">
+                        </div>
+                    </div>
+                </li>
+
+                <li class="history__timeline__list__item">
+                    <h5>2008</h5>
+
+                    <div class="history__timeline__list__item__container">
+                        <div class="text">
+                            <p>Depois de disputar a 3ª Div. Nacional-Série B, sobe à 2ª Div. Nacional-Série B.</p>
+                        </div>
+
+                        <div class="image">
+                            <img src="../assets/history/18.jpg" alt="Timeline Image">
+                        </div>
+                    </div>
+                </li>
+
+                <li class="history__timeline__list__item">
+                    <h5>2011</h5>
+
+                    <div class="history__timeline__list__item__container">
+                        <div class="text">
+                            <p>Após disputar a 3ª Div. Nacional-Série B, torna o AFC à 2ª Div. Nacional que era
+                                dividida pela zona norte, centro e sul. Posteriormente em 2013, o campeonato é
+                                designado por Campeonato Nacional de Seniores, estando a competição dividida por
+                                séries. Entretanto dá-se uma nova transformação a partir de 2015, denominando-se em
+                                Campeonato de Portugal, que atualmente disputa.</p>
+                        </div>
+
+                        <div class="image">
+                            <img src="../assets/history/19.jpg" alt="Timeline Image">
+                        </div>
+                    </div>
+                </li>
+
+                <li class="history__timeline__list__item">
+                    <h5>2015</h5>
+
+                    <div class="history__timeline__list__item__container">
+                        <div class="text">
+                            <p>O Amarante Futebol Clube disputa pela primeira vez aos oitavos de final da Taça de
+                                Portugal, contra o FC Arouca. O encontro realizado no Estádio Municipal de Amarante, teve o resultado de 1-2.</p>
+                        </div>
+
+                        <div class="image">
+                            <img src="../assets/history/20.jpg" alt="Timeline Image">
                         </div>
                     </div>
                 </li>
@@ -177,7 +363,6 @@ export default class History extends Vue {}
                 position: relative;
                 padding: 0 2rem;
                 width: 50%;
-                text-align: right;
                 font-weight: 400;
                 font-size: 1.4rem;
                 color: #2c272f;
@@ -186,15 +371,16 @@ export default class History extends Vue {}
               .image {
                 position: relative;
                 width: 50%;
+                max-height: 40rem;
                 padding: 2.4rem 2rem;
 
                 display: flex;
                 justify-content: center;
                 align-items: center;
 
-                > img {
+                & > img {
                   max-width: 100%;
-                  max-width: 100%;
+                  max-height: 100%;
                   object-fit: contain;
                 }
               }

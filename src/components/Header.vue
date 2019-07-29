@@ -8,15 +8,21 @@
             <div class="submenu">
               <ul class="submenu-nav">
                 <li class="submenu-nav__item">
-                  <span>História</span>
+                  <router-link tag="div" to="/history">
+                    <span>História</span>
+                  </router-link>
                 </li>
 
                 <li class="submenu-nav__item">
-                  <span>Instalações</span>
+                  <router-link tag="div" to="/installations">
+                    <span>Instalações</span>
+                  </router-link>
                 </li>
 
                 <li class="submenu-nav__item">
-                  <span>Presidentes</span>
+                  <router-link tag="div" to="/presidents">
+                    <span>Presidentes</span>
+                  </router-link>
                 </li>
               </ul>
             </div>
