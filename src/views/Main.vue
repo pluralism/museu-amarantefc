@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Header />
+    <Header class="header" />
 
     <div class="content">
       <main>
@@ -14,13 +14,6 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-
-// import Home from '@/views/Home.vue';
-// import History from '@/views/History.vue';
-// import Schedule from '@/views/Schedule.vue';
-// import EventDetails from '@/views/EventDetails.vue';
-// import Gallery from '@/views/Gallery.vue';
-// import Installations from '@/views/Installations.vue';
 
 import Footer from '@/components/Footer.vue';
 import Header from '@/components/Header.vue';
@@ -42,5 +35,12 @@ export default class Main extends Vue {
     background-color: #fff;
 
     min-height: 100vh;
+  }
+
+  .header {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 2;
   }
 </style>

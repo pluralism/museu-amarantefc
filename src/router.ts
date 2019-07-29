@@ -1,6 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Main from './views/Main.vue';
+import HistoryComponent from './views/History.vue';
+import ScheduleComponent from './views/Schedule.vue';
+import InstallationsComponent from './views/Installations.vue';
+import PresidentsListComponent from './views/PresidentsList.vue';
 
 Vue.use(Router);
 
@@ -15,23 +19,23 @@ export default new Router({
       children: [
         {
           path: '',
-          component: () => import('./views/History.vue')
+          component: HistoryComponent
         },
         {
           path: 'history',
-          component: () => import('./views/History.vue')
+          component: HistoryComponent
         },
         {
           path: 'presidents',
-          component: () => import('./views/PresidentsList.vue')
+          component: PresidentsListComponent
         },
         {
           path: 'schedule',
-          component: () => import('./views/Schedule.vue')
+          component: ScheduleComponent
         },
         {
           path: 'installations',
-          component: () => import('./views/Installations.vue')
+          component: InstallationsComponent
         }
       ]
     },
