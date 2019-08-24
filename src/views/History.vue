@@ -19,7 +19,7 @@
                         </div>
 
                         <div class="image">
-                          <img src="../assets/history/1.jpg" alt="Timeline Image">
+                          <img src="../assets/history/1-min.jpg" alt="Timeline Image">
                         </div>
                     </div>
                 </li>
@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="image">
-                          <img src="../assets/history/4.png" alt="Timeline Image">
+                          <img src="../assets/history/4-min.png" alt="Timeline Image">
                         </div>
                     </div>
                 </li>
@@ -47,7 +47,7 @@
                         </div>
 
                         <div class="image">
-                          <img src="../assets/history/5.jpg" alt="Timeline Image">
+                          <img src="../assets/history/5-min.jpg" alt="Timeline Image">
                         </div>
                     </div>
                 </li>
@@ -93,7 +93,7 @@
                         </div>
 
                         <div class="image">
-                            <img src="../assets/history/8.jpg" alt="Timeline Image">
+                            <img src="../assets/history/8-min.jpg" alt="Timeline Image">
                         </div>
                     </div>
                 </li>
@@ -110,7 +110,7 @@
                         </div>
 
                         <div class="image">
-                            <img src="../assets/history/9.jpg" alt="Timeline Image">
+                            <img src="../assets/history/9-min.jpg" alt="Timeline Image">
                         </div>
                     </div>
                 </li>
@@ -129,7 +129,7 @@
                         </div>
 
                         <div class="image">
-                            <img src="../assets/history/10.jpg" alt="Timeline Image">
+                            <img src="../assets/history/10-min.jpg" alt="Timeline Image">
                         </div>
                     </div>
                 </li>
@@ -143,7 +143,7 @@
                         </div>
 
                         <div class="image">
-                            <img src="../assets/history/12.jpg" alt="Timeline Image">
+                            <img src="../assets/history/12-min.jpg" alt="Timeline Image">
                         </div>
                     </div>
                 </li>
@@ -157,7 +157,7 @@
                         </div>
 
                         <div class="image">
-                            <img src="../assets/history/13.jpg" alt="Timeline Image">
+                            <img src="../assets/history/13-min.jpg" alt="Timeline Image">
                         </div>
                     </div>
                 </li>
@@ -172,7 +172,7 @@
                         </div>
 
                         <div class="image">
-                            <img src="../assets/history/14.jpg" alt="Timeline Image">
+                            <img src="../assets/history/14-min.jpg" alt="Timeline Image">
                         </div>
                     </div>
                 </li>
@@ -228,7 +228,7 @@
                         </div>
 
                         <div class="image">
-                            <img src="../assets/history/18.jpg" alt="Timeline Image">
+                            <img src="../assets/history/18-min.jpg" alt="Timeline Image">
                         </div>
                     </div>
                 </li>
@@ -246,7 +246,7 @@
                         </div>
 
                         <div class="image">
-                            <img src="../assets/history/19.jpg" alt="Timeline Image">
+                            <img src="../assets/history/19-min.jpg" alt="Timeline Image">
                         </div>
                     </div>
                 </li>

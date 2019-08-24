@@ -5,6 +5,7 @@ import HistoryComponent from './views/History.vue';
 import ScheduleComponent from './views/Schedule.vue';
 import InstallationsComponent from './views/Installations.vue';
 import PresidentsListComponent from './views/PresidentsList.vue';
+import GalleryComponent from './views/Gallery.vue';
 
 Vue.use(Router);
 
@@ -36,6 +37,10 @@ export default new Router({
         {
           path: 'installations',
           component: InstallationsComponent
+        },
+        {
+          path: 'gallery',
+          component: GalleryComponent
         }
       ]
     },
