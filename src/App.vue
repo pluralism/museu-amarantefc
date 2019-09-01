@@ -31,7 +31,6 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   line-height: 1.6;
-  background-color: var(--color-primary);
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;

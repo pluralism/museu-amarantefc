@@ -31,7 +31,7 @@ export default class Main extends Vue {
 <style lang="scss">
   .container {
     max-width: 160rem;
-    margin: 8rem auto;
+    margin: 0 auto;
     background-color: #fff;
 
     min-height: 100vh;
