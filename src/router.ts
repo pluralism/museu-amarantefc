@@ -31,7 +31,7 @@ export default new Router({
           component: PresidentsListComponent
         },
         {
-          path: 'schedule',
+          path: 'schedule/:year',
           component: ScheduleComponent
         },
         {

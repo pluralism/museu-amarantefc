@@ -31,14 +31,20 @@
         </li>
 
         <li class="menu-nav__item">
-          <router-link tag="div" class="menu-nav__item__header" to="/schedule">
+          <div class="menu-nav__item__header">
             <span>Eventos</span>
-          </router-link>
+          </div>
 
           <div class="submenu">
             <ul class="submenu-nav">
               <li class="submenu-nav__item">
-                <span>2019</span>
+                <router-link tag="div" to="/schedule/2020">
+                  <span>2020</span>
+                </router-link>
+
+                <router-link tag="div" to="/schedule/2019">
+                  <span>2019</span>
+                </router-link>
               </li>
             </ul>
           </div>
