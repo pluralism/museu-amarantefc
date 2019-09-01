@@ -1,17 +1,17 @@
 <template>
     <div class="calendar">
         <div class="calendar__controls">
-            <button class="calendar__controls__prev">
+            <button class="calendar__controls__prev" @click="addMonth(-1)">
                 <svg width="14" height="10" viewBox="0 0 14 10">
                     <path d="M5.06 0l.891.881-3.529 3.494L14 4.432v1.25L2.422 5.625l3.529 3.494-.892.881L0 5z" fill="#2c272f" fill-rule="evenodd"></path>
                 </svg>
             </button>
 
             <div class="calendar__controls__date">
-                <span>Abril 2019</span>
+                <span>{{ date | formatMonthName }} {{ date.year() }}</span>
             </div>
 
-            <button class="calendar__controls__next">
+            <button class="calendar__controls__next" @click="addMonth(1)">
                 <svg width="14" height="10" viewBox="8 10 14 10">
                     <path d="M16.94 10l-.891.881 3.529 3.494L8 14.432v1.25l11.578-.057-3.529 3.494.892.881L22 15z" fill="#2c272f" fill-rule="evenodd"></path>
                 </svg>
@@ -27,51 +27,77 @@
             <div class="calendar__days__item calendar__days__item--header">Sex</div>
             <div class="calendar__days__item calendar__days__item--header">Sáb</div>
 
-
-            <div class="calendar__days__item calendar__days__item--prev-month">31</div>
-            <div class="calendar__days__item">1</div>
-            <div class="calendar__days__item">2</div>
-            <div class="calendar__days__item">3</div>
-            <div class="calendar__days__item">4</div>
-            <div class="calendar__days__item">5</div>
-            <div class="calendar__days__item">6</div>
-            <div class="calendar__days__item">7</div>
-            <div class="calendar__days__item">8</div>
-            <div class="calendar__days__item">9</div>
-            <div class="calendar__days__item">10</div>
-            <div class="calendar__days__item">11</div>
-            <div class="calendar__days__item">12</div>
-            <div class="calendar__days__item">13</div>
-            <div class="calendar__days__item calendar__days__item calendar__days__item--has-events">14</div>
-            <div class="calendar__days__item calendar__days__item--today">15</div>
-            <div class="calendar__days__item">16</div>
-            <div class="calendar__days__item">17</div>
-            <div class="calendar__days__item">18</div>
-            <div class="calendar__days__item">19</div>
-            <div class="calendar__days__item">20</div>
-            <div class="calendar__days__item">21</div>
-            <div class="calendar__days__item">22</div>
-            <div class="calendar__days__item">23</div>
-            <div class="calendar__days__item">24</div>
-            <div class="calendar__days__item">25</div>
-            <div class="calendar__days__item">26</div>
-            <div class="calendar__days__item">27</div>
-            <div class="calendar__days__item">28</div>
-            <div class="calendar__days__item">29</div>
-            <div class="calendar__days__item">30</div>
-            <div class="calendar__days__item calendar__days__item--next-month">1</div>
-            <div class="calendar__days__item calendar__days__item--next-month">2</div>
-            <div class="calendar__days__item calendar__days__item--next-month">3</div>
-            <div class="calendar__days__item calendar__days__item--next-month">4</div>
+            <template v-for="day in dates">
+                <div class="calendar__days__item" :class="{ 'calendar__days__item--prev-month': day.isPreviousMonth,
+                'calendar__days__item--next-month': day.isNextMonth, 'calendar__days__item--today': day.isToday }">{{ day.date.date() }}</div>
+            </template>
         </div>
     </div>
 </template>
 
 <script lang="ts">
     import { Vue, Component } from 'vue-property-decorator';
+    import moment from "moment";
 
-    @Component({ name: 'calendar' })
-    export default class Calendar extends Vue { }
+    @Component({
+        name: 'calendar',
+        props: ['date'],
+        filters: {
+            formatMonthName(value: Date) {
+                return moment(value)
+                    .locale("pt")
+                    .format("MMMM")
+            },
+        }
+    })
+    export default class Calendar extends Vue {
+        addMonth(n: number) {
+            this.$emit('update:addMonth', n);
+        }
+
+        get dates() {
+            const dates = [];
+
+            const today = moment(new Date());
+            const copydate = moment(this.date).set('date', 1);
+            let weekday = (copydate.isoWeekday()) % 7; // 1 - monday, 7 - sunday
+
+            if (weekday > 0) {
+                for(let i = 0; i < weekday; i++) {
+                    const tempDate = copydate.clone().add((weekday - i) * -1, 'days');
+                    dates.push({
+                        date: tempDate,
+                        isPreviousMonth: true,
+                        isToday: tempDate.isSame(today, 'day')
+                    });
+                }
+            }
+
+            const daysInMonth = copydate.daysInMonth();
+            for(let i = 0; i < daysInMonth; i++) {
+                const tempDate = copydate.clone().add(i, 'days');
+                dates.push({
+                    date: tempDate,
+                    isToday: tempDate.isSame(today, 'day')
+                });
+            }
+
+            const lastDayOfMonth = dates[dates.length - 1].date;
+            weekday = lastDayOfMonth.clone().isoWeekday() % 7;
+            if (weekday != 6) {
+                for(let i = 1; i <= 6 - weekday; i++) {
+                    const tempDate = lastDayOfMonth.clone().add(i, 'days');
+                    dates.push({
+                        date: tempDate,
+                        isNextMonth: true,
+                        isToday: tempDate.isSame(today, 'day')
+                    });
+                }
+            }
+
+            return dates;
+        }
+    }
 </script>
 
 <style lang="scss">

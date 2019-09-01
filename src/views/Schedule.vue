@@ -3,69 +3,76 @@
     <!-- <div class="loading-ring"></div> -->
 
     <div class="calendar">
-      <Calendar />
+      <Calendar :date="date" @update:addMonth="addMonth($event)" />
     </div>
 
     <div class="schedule">
       <header class="schedule__header">
-        <div class="schedule__month">Março 2020</div>
+        <div class="schedule__month">{{ currentDate | formatMonthName }} {{ currentDate.year() }}</div>
       </header>
 
       <div class="schedule__events">
-        <div class="schedule__events__day" v-for="(eventsDay, day) in groupedEvents" :key="day">
-          <div class="schedule__events__day__header">
-            <div class="details">
+        <template v-if="Object.keys(groupedEvents).length > 0">
+          <div class="schedule__events__day" v-for="(eventsDay, day) in groupedEvents" :key="day">
+            <div class="schedule__events__day__header">
+              <div class="details">
               <span class="day">
                 {{day.padStart(2, '0')}}
                 <span
-                  class="weekday"
+                        class="weekday"
                 >{{ eventsDay[0].date | formatDayOfWeek }}</span>
               </span>
+              </div>
             </div>
+
+            <ul class="schedule__events__day__list" v-for="(event, index) in eventsDay" :key="index">
+              <li class="event">
+                <div class="event__details">
+                  <div class="left">
+                    <div class="date">
+                      <span>{{ event.date | formateDateTime }}</span>
+                    </div>
+                  </div>
+
+                  <div class="right">
+                    <div class="name">
+                      <span>{{ event.title }}</span>
+                    </div>
+
+                    <div class="description">
+                      <span>{{ event.description }}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="event__actions">
+                  <div class="event__actions__details">
+                    <router-link
+                            tag="button"
+                            :class="'event__actions__details--' + (event.detailsLink ? 'available' : 'unavailable')"
+                            :to="event.detailsLink"
+                    >
+                      <span v-if="event.detailsLink">Ver detalhes</span>
+                      <span v-else>Detalhes indisponíveis</span>
+                    </router-link>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
-
-          <ul class="schedule__events__day__list" v-for="(event, index) in eventsDay" :key="index">
-            <li class="event">
-              <div class="event__details">
-                <div class="left">
-                  <div class="date">
-                    <span>{{ event.date | formateDateTime }}</span>
-                  </div>
-                </div>
-
-                <div class="right">
-                  <div class="name">
-                    <span>{{ event.title }}</span>
-                  </div>
-
-                  <div class="description">
-                    <span>{{ event.description }}</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="event__actions">
-                <div class="event__actions__details">
-                  <router-link
-                    tag="button"
-                    :class="'event__actions__details--' + (event.detailsLink ? 'available' : 'unavailable')"
-                    :to="event.detailsLink"
-                  >
-                    <span v-if="event.detailsLink">Ver detalhes</span>
-                    <span v-else>Detalhes indisponíveis</span>
-                  </router-link>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
+        </template>
+        <template v-else>
+          <div class="schedule__events__no__events">
+            <span>Sem eventos disponíveis!</span>
+          </div>
+        </template>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "vue-property-decorator";
+  import {Vue, Component, Watch} from "vue-property-decorator";
 import Calendar from "@/components/Calendar.vue";
 import moment from "moment";
 
@@ -73,37 +80,78 @@ import moment from "moment";
   name: "schedule",
   components: { Calendar },
   filters: {
-    formateDateTime(value: Date) {
-      return moment(value)
+    formateDateTime(value) {
+      return value
         .locale("pt")
         .format("HH:mm");
     },
-    formatDayOfWeek(value: Date) {
-      return moment(value)
+    formatDayOfWeek(value) {
+      return value
         .locale("pt")
         .format("dddd");
+    },
+    formatMonthName(value) {
+      return value
+        .locale("pt")
+        .format("MMMM")
     }
   }
 })
 export default class Schedule extends Vue {
   private events = [
     {
-      date: new Date(2020, 2, 7, 16, 0),
+      date: moment(new Date(2020, 2, 7, 16, 0)),
       title: "Entrega do prémio Alvinegro",
       description: "Estádio do Amarante FC",
       detailsLink: ""
     }
   ];
 
+  private today = moment(new Date());
+  private date = moment(new Date());
+
+  @Watch('$route')
+  onRouteChange(value: any, oldValue: any) {
+    const year = +value.params.year;
+    this.setInitialDate(year);
+  }
+
+  created() {
+    const year = +this.$route.params.year;
+    this.setInitialDate(year);
+  }
+
+  setInitialDate(year: number) {
+    if (this.today.year() !== year) {
+      this.date = this.date.year(year).month(0).date(1).clone();
+    } else {
+      this.date = this.today.clone();
+    }
+  }
+
+  get currentDate() {
+    return this.date;
+  }
+
   get groupedEvents() {
-    return this.events.reduce((acc: { [key: number]: any }, current) => {
-      const day = current.date.getDate();
+    const filteredEvents = this.events.filter(e => e.date.year() === this.currentDate.year() && e.date.month() === this.currentDate.month());
+
+    return filteredEvents.reduce((acc: { [key: number]: any }, current) => {
+      const day = current.date.date();
       if (!acc.hasOwnProperty(day)) {
         acc[day] = [];
       }
-      acc[day] = [...acc[day], current];
+      acc[day].push(current);
       return acc;
     }, {});
+  }
+
+  addMonth(ev: any) {
+    const year = this.date.year();
+    this.date = moment(this.date).add(ev, 'months').date(1).clone();
+    if (this.date.year() !== year) {
+      this.$router.replace('/schedule/' + this.date.year());
+    }
   }
 }
 </script>
@@ -201,6 +249,15 @@ export default class Schedule extends Vue {
   }
 
   &__events {
+    &__no__events {
+      display: flex;
+      justify-content: center;
+
+      & > span {
+        font-size: 2.5rem;
+      }
+    }
+
     &__day {
       &__header {
         position: relative;
