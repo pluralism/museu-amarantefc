@@ -8,7 +8,7 @@
 
     <div class="schedule">
       <header class="schedule__header">
-        <div class="schedule__month">{{ currentDate | formatMonthName }} {{ currentDate.year() }}</div>
+        <div class="schedule__month">{{ currentDate | formatDate("MMMM") }} {{ currentDate.year() }}</div>
       </header>
 
       <div class="schedule__events">
@@ -20,7 +20,7 @@
                 {{day.padStart(2, '0')}}
                 <span
                         class="weekday"
-                >{{ eventsDay[0].date | formatDayOfWeek }}</span>
+                >{{ eventsDay[0].date | formatDate("dddd") }}</span>
               </span>
               </div>
             </div>
@@ -30,7 +30,7 @@
                 <div class="event__details">
                   <div class="left">
                     <div class="date">
-                      <span>{{ event.date | formateDateTime }}</span>
+                      <span>{{ event.date | formatDate("HH:mm") }}</span>
                     </div>
                   </div>
 
@@ -80,20 +80,8 @@ import moment from "moment";
   name: "schedule",
   components: { Calendar },
   filters: {
-    formateDateTime(value) {
-      return value
-        .locale("pt")
-        .format("HH:mm");
-    },
-    formatDayOfWeek(value) {
-      return value
-        .locale("pt")
-        .format("dddd");
-    },
-    formatMonthName(value) {
-      return value
-        .locale("pt")
-        .format("MMMM")
+    formatDate(value, arg1) {
+      return value.locale("pt").format(arg1);
     }
   }
 })
