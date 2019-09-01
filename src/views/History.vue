@@ -287,7 +287,7 @@ export default class History extends Vue {}
         height: calc(100% + #{$padding} * 1rem);
         top: 0;
         right: 0;
-        background: rgba(0,166,240,.2);
+        background: var(--color-primary);
     }
 
     .history {
