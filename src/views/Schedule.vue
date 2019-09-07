@@ -80,7 +80,7 @@ import moment from "moment";
   name: "schedule",
   components: { Calendar },
   filters: {
-    formatDate(value, arg1) {
+    formatDate(value: any, arg1: any) {
       return value.locale("pt").format(arg1);
     }
   }
@@ -205,7 +205,7 @@ export default class Schedule extends Vue {
       text-decoration: none;
       cursor: pointer;
       text-align: center;
-      color: #202221;
+      color: var(--afc-primary-color);
 
       padding: 1rem 2rem;
       border-radius: 0.2rem;
@@ -213,15 +213,14 @@ export default class Schedule extends Vue {
       transition: all 0.3s ease-in-out;
 
       &:hover {
-        background-color: #202221;
-        color: #04b46b;
+        background-color: var(--afc-primary-color);
         transition: all 0.3s ease-in-out;
       }
     }
   }
 
   &__header {
-    background-color: #202221;
+    background-color: var(--afc-primary-color);
     color: #fff;
     margin-bottom: 3rem;
   }
@@ -265,7 +264,7 @@ export default class Schedule extends Vue {
           position: relative;
           margin-left: 3.5rem;
           text-align: center;
-          color: #202221;
+          color: var(--afc-primary-color);
 
           & > .day {
             background-color: #fff;
@@ -318,7 +317,7 @@ export default class Schedule extends Vue {
             & > .name {
               font-size: 2.5rem;
               font-weight: 600;
-              color: #04b46b;
+              color: #2c272f;
             }
 
             & > .description {

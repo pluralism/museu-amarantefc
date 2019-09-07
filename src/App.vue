@@ -9,6 +9,8 @@
 
 :root {
   --color-primary: #3c272f;
+  --afc-light-brown: #DBB073;
+  --afc-primary-color: #202221;
 }
 
 * {

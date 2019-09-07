@@ -28,8 +28,10 @@
             <div class="calendar__days__item calendar__days__item--header">Sáb</div>
 
             <template v-for="day in dates">
-                <div class="calendar__days__item" :class="{ 'calendar__days__item--prev-month': day.isPreviousMonth,
-                'calendar__days__item--next-month': day.isNextMonth, 'calendar__days__item--today': day.isToday }">{{ day.date.date() }}</div>
+                <div class="calendar__days__item" :key="day" :class="{ 
+                    'calendar__days__item--prev-month': day.isPreviousMonth,
+                    'calendar__days__item--next-month': day.isNextMonth, 
+                    'calendar__days__item--today': day.isToday }">{{ day.date.date() }}</div>
             </template>
         </div>
     </div>
@@ -104,7 +106,7 @@
     .calendar {
         position: relative;
         font-size: 1.2rem;
-        color: #04b46b;
+        color: var(--afc-light-brown);
 
         &__controls {
             margin-bottom: 2rem;
@@ -115,6 +117,7 @@
             & > button {
                 background-color: transparent;
                 border: none;
+                outline: none;
                 cursor: pointer;
             }
 
@@ -154,11 +157,11 @@
                 }
 
                 &--prev-month {
-                    color: #202221;
+                    color: var(--afc-primary-color);
                 }
 
                 &--next-month {
-                    color: #202221;
+                    color: var(--afc-primary-color);
                 }
 
                 &--has-events {
@@ -196,9 +199,9 @@
                         left: 50%;
 
                         transform: translateX(-50%) translateY(-50%);
-                        border: 2px solid #202221;
+                        border: 2px solid var(--afc-primary-color);
                         border-radius: 50%;
-                        background-color: #202221;
+                        background-color: var(--afc-primary-color);
                         z-index: -1;
                     }
                 }

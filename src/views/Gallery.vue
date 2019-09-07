@@ -1,67 +1,12 @@
 <template>
     <div class="gallery">
         <div class="gallery__container">
-            <figure class="gallery__item gallery__item--1">
+            <figure v-for="image in images" :key="image.id" 
+            :class="{'gallery__item': true, ['gallery__item--' + image.id]: true}">
                 <div class="gallery__item__title">
-                    <span>Imagem 1</span>
+                    <span>{{ image.description }}</span>
                 </div>
-                <img src="../assets/gallery/gallery1.jpg" class="gallery__img" alt="Imagem 1">
-            </figure>
-
-            <figure class="gallery__item gallery__item--2">
-                <div class="gallery__item__title">
-                    <span>Imagem 2</span>
-                </div>
-                <img src="../assets/gallery/gallery2.jpg" class="gallery__img" alt="Imagem 2">
-            </figure>
-
-            <figure class="gallery__item gallery__item--3">
-                <div class="gallery__item__title">
-                    <span>Imagem 3</span>
-                </div>
-                <img src="../assets/gallery/gallery3.jpg" class="gallery__img" alt="Imagem 2">
-            </figure>
-
-            <figure class="gallery__item gallery__item--4">
-                <div class="gallery__item__title">
-                    <span>Imagem 4</span>
-                </div>
-                <img src="../assets/gallery/gallery4.jpg" class="gallery__img" alt="Imagem 2">
-            </figure>
-
-            <figure class="gallery__item gallery__item--5">
-                <div class="gallery__item__title">
-                    <span>Imagem 5</span>
-                </div>
-                <img src="../assets/gallery/gallery5.jpg" class="gallery__img" alt="Imagem 2">
-            </figure>
-
-            <figure class="gallery__item gallery__item--6">
-                <div class="gallery__item__title">
-                    <span>Imagem 6</span>
-                </div>
-                <img src="../assets/gallery/gallery6.jpg" class="gallery__img" alt="Imagem 2">
-            </figure>
-
-            <figure class="gallery__item gallery__item--7">
-                <div class="gallery__item__title">
-                    <span>Imagem 7</span>
-                </div>
-                <img src="../assets/gallery/gallery7.jpg" class="gallery__img" alt="Imagem 2">
-            </figure>
-
-            <figure class="gallery__item gallery__item--9">
-                <div class="gallery__item__title">
-                    <span>Imagem 8</span>
-                </div>
-                <img src="../assets/gallery/gallery9.jpg" class="gallery__img" alt="Imagem 2">
-            </figure>
-
-            <figure class="gallery__item gallery__item--10">
-                <div class="gallery__item__title">
-                    <span>Imagem 10</span>
-                </div>
-                <img src="../assets/gallery/gallery10.jpg" class="gallery__img" alt="Imagem 2">
+                <img :src="image.src" class="gallery__img" :alt="image.alt">
             </figure>
         </div>
     </div>
@@ -71,7 +16,64 @@
 import { Vue, Component } from 'vue-property-decorator';
 
 @Component({ name: 'gallery' })
-export default class Gallery extends Vue { }
+export default class Gallery extends Vue {
+    private images = [
+        {
+            id: 1,
+            description: 'Imagem 1',
+            src: require('../assets/gallery/gallery1.jpg'),
+            alt: 'Imagem 1'
+        },
+        {
+            id: 2,
+            description: 'Imagem 2',
+            src: require('../assets/gallery/gallery2.jpg'),
+            alt: 'Imagem 2'
+        },
+        {
+            id: 3,
+            description: 'Imagem 3',
+            src: require('../assets/gallery/gallery3.jpg'),
+            alt: 'Imagem 3'
+        },
+        {
+            id: 4,
+            description: 'Imagem 4',
+            src: require('../assets/gallery/gallery4.jpg'),
+            alt: 'Imagem 4'
+        },
+        {
+            id: 5,
+            description: 'Imagem 5',
+            src: require('../assets/gallery/gallery5.jpg'),
+            alt: 'Imagem 5'
+        },
+        {
+            id: 6,
+            description: 'Imagem 6',
+            src: require('../assets/gallery/gallery6.jpg'),
+            alt: 'Imagem 6'
+        },
+        {
+            id: 7,
+            description: 'Imagem 7',
+            src: require('../assets/gallery/gallery7.jpg'),
+            alt: 'Imagem 7'
+        },
+        {
+            id: 9,
+            description: 'Imagem 9',
+            src: require('../assets/gallery/gallery9.jpg'),
+            alt: 'Imagem 9'
+        },
+        {
+            id: 10,
+            description: 'Imagem 10',
+            src: require('../assets/gallery/gallery10.jpg'),
+            alt: 'Imagem 10'
+        },
+    ];
+}
 </script>
 
 <style lang="scss">
@@ -99,7 +101,7 @@ export default class Gallery extends Vue { }
                 height: 100%;
                 text-decoration: none;
                 font-weight: 600;
-                font-size: 3rem;
+                font-size: 2rem;
                 background: rgba(90, 0, 10, 0.4);
 
                 display: flex;

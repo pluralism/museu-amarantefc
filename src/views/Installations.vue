@@ -1,44 +1,13 @@
 <template>
     <div class="installations">
         <div class="installations__container">
-            <figure class="installations__item installations__item--1">
+            <figure v-for="installation in installations" :key="installation.id"
+            :class="{'installations__item': true, ['installations__item--' + installation.id]: true}">
                 <div class="installations__item__caption">
-                    <span>Campo da Praça</span>
-                    <span class="year">1923-1925</span>
+                    <span>{{ installation.name }}</span>
+                    <span class="year">{{ installation.yearRange }}</span>
                 </div>
-                <img src="../assets/installations/1_praca.jpg" class="installations__item__img" alt="Campo da Praça">
-            </figure>
-
-            <figure class="installations__item installations__item--2">
-                <div class="installations__item__caption">
-                    <span>Campo da Florestal</span>
-                    <span class="year">1925-1926</span>
-                </div>
-                <img src="../assets/installations/2_florestal.jpg" class="installations__item__img" alt="Campo da Florestal">
-            </figure>
-
-            <figure class="installations__item installations__item--3">
-                <div class="installations__item__caption">
-                    <span>Campo da Feira</span>
-                    <span class="year">1931-1933</span>
-                </div>
-                <img src="../assets/installations/3_feira.jpg" class="installations__item__img" alt="Campo da Feira">
-            </figure>
-
-            <figure class="installations__item installations__item--4">
-                <div class="installations__item__caption">
-                    <span>Campo da Barroca</span>
-                    <span class="year">1934-1981</span>
-                </div>
-                <img src="../assets/installations/4_barroca.jpg" class="installations__item__img" alt="Campo da Barroca">
-            </figure>
-
-            <figure class="installations__item installations__item--5">
-                <div class="installations__item__caption">
-                    <span>Estádio Municipal de Amarante</span>
-                    <span class="year">1981-Presente</span>
-                </div>
-                <img src="../assets/installations/5_estadio.jpg" class="installations__item__img" alt="Estádio Municipal de Amarante">
+                <img :src="installation.image" class="installations__item__img" :alt="installation.name">
             </figure>
         </div>
     </div>
@@ -48,7 +17,40 @@
 import { Vue, Component } from 'vue-property-decorator';
 
 @Component({ name: 'installations' })
-export default class Installations extends Vue {}
+export default class Installations extends Vue {
+    private installations = [
+        {
+            id: 1,
+            name: 'Campo da Praça',
+            yearRange: '1923-1925',
+            image: require('../assets/installations/1_praca.jpg'),
+        },
+        {
+            id: 2,
+            name: 'Campo da Florestal',
+            yearRange: '1925-1926',
+            image: require('../assets/installations/2_florestal.jpg'),
+        },
+        {
+            id: 3,
+            name: 'Campo da Feira',
+            yearRange: '1931-1933',
+            image: require('../assets/installations/3_feira.jpg'),
+        },
+        {
+            id: 4,
+            name: 'Campo da Barroca',
+            yearRange: '1934-1981',
+            image: require('../assets/installations/4_barroca.jpg'),
+        },
+        {
+            id: 5,
+            name: 'Estádio Municipal de Amarante',
+            yearRange: '1981-Presente',
+            image: require('../assets/installations/5_estadio.jpg'),
+        },
+    ];
+}
 </script>
 
 <style lang="scss">
@@ -63,7 +65,6 @@ export default class Installations extends Vue {}
         }
 
         &__item {
-            cursor: pointer;
             position: relative;
 
             &__img {
@@ -73,6 +74,7 @@ export default class Installations extends Vue {}
             }
 
             &__caption {
+                cursor: pointer;
                 position: absolute;
                 width: 100%;
                 height: 6rem;
@@ -84,10 +86,6 @@ export default class Installations extends Vue {}
                 justify-content: center;
                 align-items: center;
                 transition: all .3s ease-in-out;
-
-                &:hover {
-                    background: #333;
-                }
 
                 > span {
                     color: #fff;
