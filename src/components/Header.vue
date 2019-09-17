@@ -105,7 +105,7 @@ export default class Header extends Vue {}
       cursor: pointer;
       width: 100%;
       padding-top: 1rem;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       color: #fff;
       transition: all 0.2s ease-in-out;
 

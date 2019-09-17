@@ -1,7 +1,7 @@
 <template>
     <div class="gallery">
         <div class="gallery__container">
-            <figure v-for="image in images" :key="image.id" 
+            <figure v-for="image in images" :key="image.id"
             :class="{'gallery__item': true, ['gallery__item--' + image.id]: true}">
                 <div class="gallery__item__title">
                     <span>{{ image.description }}</span>
@@ -20,57 +20,39 @@ export default class Gallery extends Vue {
     private images = [
         {
             id: 1,
-            description: 'Imagem 1',
-            src: require('../assets/gallery/gallery1.jpg'),
+            description: 'Amarante FC',
+            src: require('../assets/gallery/gallery1.png'),
             alt: 'Imagem 1'
         },
         {
             id: 2,
-            description: 'Imagem 2',
-            src: require('../assets/gallery/gallery2.jpg'),
+            description: 'Amarante FC',
+            src: require('../assets/gallery/gallery2.png'),
             alt: 'Imagem 2'
         },
         {
             id: 3,
-            description: 'Imagem 3',
-            src: require('../assets/gallery/gallery3.jpg'),
+            description: 'Amarante FC',
+            src: require('../assets/gallery/gallery3.png'),
             alt: 'Imagem 3'
         },
         {
             id: 4,
-            description: 'Imagem 4',
-            src: require('../assets/gallery/gallery4.jpg'),
+            description: 'Amarante FC',
+            src: require('../assets/gallery/gallery4.png'),
             alt: 'Imagem 4'
         },
         {
             id: 5,
-            description: 'Imagem 5',
-            src: require('../assets/gallery/gallery5.jpg'),
+            description: 'Amarante FC',
+            src: require('../assets/gallery/gallery5.png'),
             alt: 'Imagem 5'
         },
         {
             id: 6,
-            description: 'Imagem 6',
-            src: require('../assets/gallery/gallery6.jpg'),
+            description: 'Amarante FC',
+            src: require('../assets/gallery/gallery6.png'),
             alt: 'Imagem 6'
-        },
-        {
-            id: 7,
-            description: 'Imagem 7',
-            src: require('../assets/gallery/gallery7.jpg'),
-            alt: 'Imagem 7'
-        },
-        {
-            id: 9,
-            description: 'Imagem 9',
-            src: require('../assets/gallery/gallery9.jpg'),
-            alt: 'Imagem 9'
-        },
-        {
-            id: 10,
-            description: 'Imagem 10',
-            src: require('../assets/gallery/gallery10.jpg'),
-            alt: 'Imagem 10'
         },
     ];
 }
@@ -83,7 +65,7 @@ export default class Gallery extends Vue {
         &__container {
             display: grid;
             grid-template-columns: repeat(8, 1fr);
-            grid-template-rows: repeat(11, 5vw);
+            grid-template-rows: repeat(8, 5vw);
             grid-gap: 1.5rem;
         }
 
@@ -135,39 +117,24 @@ export default class Gallery extends Vue {
                 grid-row: 1 / 5;
             }
 
-            &--4 {
-                grid-column: 7 / 9;
-                grid-row: 1 / 6;
-            }
-
-            &--9 {
-                grid-column: 1 / 4;
-                grid-row: 4 / 7;
-            }
-
-            &--6 {
-                grid-column: 4 / 7;
-                grid-row: 5 / 8;
-            }
-
-            &--7 {
-                grid-column: 4 / 7;
-                grid-row: 8 / 12;
-            }
-
             &--3 {
                 grid-column: 7 / 9;
                 grid-row: 6 / 9;
             }
 
-            &--10 {
+            &--4 {
                 grid-column: 7 / 9;
-                grid-row: 9 / 12;
+                grid-row: 1 / 6;
             }
 
             &--5 {
                 grid-column: 1 / 4;
-                grid-row: 7 / 12;
+                grid-row: 4 / 9;
+            }
+
+            &--6 {
+                grid-column: 4 / 7;
+                grid-row: 5 / 8;
             }
         }
 
