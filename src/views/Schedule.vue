@@ -13,14 +13,12 @@
 
       <div class="schedule__events">
         <template v-if="Object.keys(groupedEvents).length > 0">
-          <div class="schedule__events__day" v-for="(eventsDay, day) in groupedEvents" :key="day">
+          <div class="schedule__events__day" v-for="(eventsDay, day, index) in groupedEvents" :key="index">
             <div class="schedule__events__day__header">
               <div class="details">
               <span class="day">
                 {{day.padStart(2, '0')}}
-                <span
-                        class="weekday"
-                >{{ eventsDay[0].date | formatDate("dddd") }}</span>
+                <span class="weekday">{{ eventsDay[0].date | formatDate("dddd") }}</span>
               </span>
               </div>
             </div>
@@ -101,17 +99,26 @@ export default class Schedule extends Vue {
   @Watch('$route')
   onRouteChange(value: any, oldValue: any) {
     const year = +value.params.year;
-    this.setInitialDate(year);
+    this.setInitialDate(year, value.query.showImmediateEvents);
   }
 
   created() {
     const year = +this.$route.params.year;
-    this.setInitialDate(year);
+    this.setInitialDate(year, true);
   }
 
-  setInitialDate(year: number) {
+  setInitialDate(year: number, showFirstEventOfYear?: boolean) {
     if (this.today.year() !== year) {
-      this.date = this.date.year(year).month(0).date(1).clone();
+      if (showFirstEventOfYear) {
+        const filteredEvents = this.events.filter(event => event.date.year() === year);
+
+        if (filteredEvents.length > 0) {
+          this.date = filteredEvents[0].date.clone().date(1);
+          return;
+        }
+      }
+      
+      this.date = this.date.year(year).month(0).date(1).clone();      
     } else {
       this.date = this.today.clone();
     }

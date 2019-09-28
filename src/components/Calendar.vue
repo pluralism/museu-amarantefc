@@ -27,8 +27,8 @@
             <div class="calendar__days__item calendar__days__item--header">Sex</div>
             <div class="calendar__days__item calendar__days__item--header">Sáb</div>
 
-            <template v-for="day in dates">
-                <div class="calendar__days__item" :key="day" :class="{ 
+            <template v-for="(day, index) in dates">
+                <div class="calendar__days__item" :key="index" :class="{ 
                     'calendar__days__item--prev-month': day.isPreviousMonth,
                     'calendar__days__item--next-month': day.isNextMonth, 
                     'calendar__days__item--today': day.isToday }">{{ day.date.date() }}</div>

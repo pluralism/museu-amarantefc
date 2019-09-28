@@ -38,12 +38,16 @@
           <div class="submenu">
             <ul class="submenu-nav">
               <li class="submenu-nav__item">
-                <router-link tag="div" to="/schedule/2020">
+                <router-link tag="div" :to="{ path: '/schedule/2020', query: { showImmediateEvents: 1 } }">
                   <span>2020</span>
                 </router-link>
 
-                <router-link tag="div" to="/schedule/2019">
+                <router-link tag="div" :to="{ path: '/schedule/2019', query: { showImmediateEvents: 1 } }">
                   <span>2019</span>
+                </router-link>
+
+                <router-link tag="div" :to="{ path: '/schedule/2018', query: { showImmediateEvents: 1 } }">
+                  <span>2018</span>
                 </router-link>
               </li>
             </ul>
