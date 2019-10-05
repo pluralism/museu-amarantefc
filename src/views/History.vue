@@ -379,7 +379,6 @@ export default class History extends Vue {}
                 align-items: center;
 
                 & > img {
-                  max-width: 100%;
                   max-height: 100%;
                   object-fit: contain;
                 }
