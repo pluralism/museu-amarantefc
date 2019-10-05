@@ -61,6 +61,7 @@
             const dates = [];
 
             const today = moment(new Date());
+            // @ts-ignore
             const copydate = moment(this.date).set('date', 1);
             let weekday = (copydate.isoWeekday()) % 7; // 1 - monday, 7 - sunday
 
