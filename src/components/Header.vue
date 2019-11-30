@@ -1,10 +1,12 @@
 <template>
   <header class="header">
     <nav class="menu">
+      <img class="logo" src="../assets/logo_museu.png" alt="Logo Museu" />
+
       <ul class="menu-nav">
         <li class="menu-nav__item">
           <router-link tag="div" class="menu-nav__item__header" to="/history">
-            <span>O Museu</span>
+            <span>Amarante FC</span>
           </router-link>
 
           <div class="submenu">
@@ -54,17 +56,9 @@
           </div>
         </li>
 
-        <img class="logo" src="../assets/logo_museu.png" alt="Logo Museu" />
-
         <li class="menu-nav__item">
           <router-link tag="div" class="menu-nav__item__header" to="/gallery">
-            <span>Galeria</span>
-          </router-link>
-        </li>
-
-        <li class="menu-nav__item">
-          <router-link tag="div" class="menu-nav__item__header" to="/history">
-            <span>Notícias</span>
+            <span>Museu</span>
           </router-link>
         </li>
       </ul>
@@ -84,6 +78,10 @@ export default class Header extends Vue {}
   font-size: 1.5rem;
   height: 9rem;
   background-color: #191919;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .submenu {
@@ -121,10 +119,15 @@ export default class Header extends Vue {}
 }
 
 .menu {
+  width: 50%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media only screen and (max-width: 900px) {
+    width: 80%;
+  }
 
   .logo {
     width: 10rem;
@@ -133,7 +136,7 @@ export default class Header extends Vue {}
 
   .menu-nav {
     position: relative;
-    width: 80%;
+    width: 100%;
     list-style: none;
     display: flex;
     justify-content: space-around;

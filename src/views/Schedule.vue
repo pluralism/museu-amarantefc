@@ -86,8 +86,38 @@ import moment from "moment";
 export default class Schedule extends Vue {
   private events = [
     {
+      date: moment(new Date(2018, 2, 10, 15, 0)),
+      title: "I Encontro Alvinegro",
+      description: "Estádio do Amarante FC",
+      detailsLink: ""
+    },
+    {
+      date: moment(new Date(2018, 2, 10, 18, 0)),
+      title: "I Prémio Alvinegro",
+      description: "Estádio do Amarante FC",
+      detailsLink: ""
+    },
+    {
+      date: moment(new Date(2018, 2, 10, 20, 0)),
+      title: "I Revista Alvinegro",
+      description: "Estádio do Amarante FC",
+      detailsLink: ""
+    },
+    {
+      date: moment(new Date(2019, 2, 9, 18, 0)),
+      title: "II Prémio Alvinegro",
+      description: "Estádio do Amarante FC",
+      detailsLink: ""
+    },
+    {
+      date: moment(new Date(2019, 2, 9, 20, 0)),
+      title: "II Revista Alvinegro",
+      description: "Estádio do Amarante FC",
+      detailsLink: ""
+    },
+    {
       date: moment(new Date(2020, 2, 7, 16, 0)),
-      title: "Entrega do prémio Alvinegro",
+      title: "III Prémio Alvinegro",
       description: "Estádio do Amarante FC",
       detailsLink: ""
     }
@@ -131,7 +161,7 @@ export default class Schedule extends Vue {
   get groupedEvents() {
     const filteredEvents = this.events.filter(e => e.date.year() === this.currentDate.year() && e.date.month() === this.currentDate.month());
 
-    return filteredEvents.reduce((acc: { [key: number]: any }, current) => {
+    const grouped = filteredEvents.reduce((acc: { [key: number]: any }, current) => {
       const day = current.date.date();
       if (!acc.hasOwnProperty(day)) {
         acc[day] = [];
@@ -139,6 +169,8 @@ export default class Schedule extends Vue {
       acc[day].push(current);
       return acc;
     }, {});
+
+    return grouped;
   }
 
   addMonth(ev: any) {
