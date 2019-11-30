@@ -104,14 +104,14 @@ export default class Schedule extends Vue {
       detailsLink: ""
     },
     {
-      date: moment(new Date(2019, 2, 9, 18, 0)),
-      title: "II Prémio Alvinegro",
+      date: moment(new Date(2019, 2, 9, 20, 0)),
+      title: "II Revista Alvinegro",
       description: "Estádio do Amarante FC",
       detailsLink: ""
     },
     {
-      date: moment(new Date(2019, 2, 9, 20, 0)),
-      title: "II Revista Alvinegro",
+      date: moment(new Date(2019, 2, 9, 18, 0)),
+      title: "II Prémio Alvinegro",
       description: "Estádio do Amarante FC",
       detailsLink: ""
     },
@@ -169,6 +169,12 @@ export default class Schedule extends Vue {
       acc[day].push(current);
       return acc;
     }, {});
+
+    for (const eventsGroup of Object.values(grouped)) {
+      if (Array.isArray(eventsGroup)) {
+        eventsGroup.sort((a: any, b: any) => a.date - b.date);
+      }
+    }
 
     return grouped;
   }
