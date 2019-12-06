@@ -6,6 +6,7 @@ import ScheduleComponent from './views/Schedule.vue';
 import InstallationsComponent from './views/Installations.vue';
 import PresidentsListComponent from './views/PresidentsList.vue';
 import GalleryComponent from './views/Gallery.vue';
+import EventDetailsComponent from './views/EventDetails.vue';
 
 Vue.use(Router);
 
@@ -41,6 +42,10 @@ export default new Router({
         {
           path: 'gallery',
           component: GalleryComponent
+        },
+        {
+          path: 'events/:id',
+          component: EventDetailsComponent
         }
       ]
     },

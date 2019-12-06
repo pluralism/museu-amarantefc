@@ -48,7 +48,7 @@
                     <router-link
                             tag="button"
                             :class="'event__actions__details--' + (event.detailsLink ? 'available' : 'unavailable')"
-                            :to="event.detailsLink"
+                            :to="{ path: event.detailsLink, query: { url: $route.fullPath } }"
                     >
                       <span v-if="event.detailsLink">Ver detalhes</span>
                       <span v-else>Detalhes indisponíveis</span>
@@ -89,7 +89,7 @@ export default class Schedule extends Vue {
       date: moment(new Date(2018, 2, 10, 15, 0)),
       title: "I Encontro Alvinegro",
       description: "Estádio do Amarante FC",
-      detailsLink: ""
+      detailsLink: "/events/encontro_alvinegro_1"
     },
     {
       date: moment(new Date(2018, 2, 10, 18, 0)),
@@ -129,16 +129,16 @@ export default class Schedule extends Vue {
   @Watch('$route')
   onRouteChange(value: any, oldValue: any) {
     const year = +value.params.year;
-    this.setInitialDate(year, value.query.showImmediateEvents);
+    this.setInitialDate(year, oldValue, value.query.showImmediateEvents);
   }
 
   created() {
     const year = +this.$route.params.year;
-    this.setInitialDate(year, true);
+    this.setInitialDate(year, 0, true);
   }
 
-  setInitialDate(year: number, showFirstEventOfYear?: boolean) {
-    if (this.today.year() !== year) {
+  setInitialDate(year: number, oldYear: number, showFirstEventOfYear?: boolean) {
+    if (year !== oldYear) {
       if (showFirstEventOfYear) {
         const filteredEvents = this.events.filter(event => event.date.year() === year);
 
@@ -183,7 +183,7 @@ export default class Schedule extends Vue {
     const year = this.date.year();
     this.date = moment(this.date).add(ev, 'months').date(1).clone();
     if (this.date.year() !== year) {
-      this.$router.replace('/schedule/' + this.date.year());
+      this.$router.replace(`/schedule/${this.date.year()}?showImmediateEvents=${this.$route.query.showImmediateEvents}`);
     }
   }
 }
