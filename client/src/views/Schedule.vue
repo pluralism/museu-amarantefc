@@ -70,7 +70,7 @@
 </template>
 
 <script lang="ts">
-  import {Vue, Component, Watch} from "vue-property-decorator";
+import {Vue, Component, Watch} from "vue-property-decorator";
 import Calendar from "@/components/Calendar.vue";
 import moment from "moment";
 
