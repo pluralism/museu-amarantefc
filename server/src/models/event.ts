@@ -1,9 +1,10 @@
-import { IsInt, IsIn, Min, IsString, MinLength, MaxLength, IsISSN, IsDate } from 'class-validator';
+import { IsString, MinLength, MaxLength, IsDate, IsNotEmpty } from 'class-validator';
 
 export class Event {
-    @IsInt()
-    @Min(0)
-    date: number;
+    static collection = 'events';
+
+    @IsDate()
+    date: Date;
 
     @IsString()
     @MinLength(3)
@@ -22,4 +23,8 @@ export class Event {
 
     @IsDate()
     createDate: Date;
+
+    @IsString()
+    @IsNotEmpty()
+    slug: string;
 }

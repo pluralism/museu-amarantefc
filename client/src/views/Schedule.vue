@@ -89,7 +89,7 @@ export default class Schedule extends Vue {
       date: moment(new Date(2018, 2, 10, 15, 0)),
       title: "I Encontro Alvinegro",
       description: "Estádio do Amarante FC",
-      detailsLink: "/events/encontro_alvinegro_1"
+      detailsLink: "/events/i_encontro_alvinegro"
     },
     {
       date: moment(new Date(2018, 2, 10, 18, 0)),
