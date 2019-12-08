@@ -63,12 +63,12 @@ export default class EventDetails extends Vue {
     }
 
     goBack() {
-        if (this.$route.query.url) {
-            // @ts-ignore
-            this.$router.push({ path: this.$route.query.url });
-        } else {
-            this.$router.push({ path: `/schedule/${new Date().getFullYear()}?showImmediateEvents=1` });
+        let year = new Date().getFullYear();
+        if (eventsStore.selectedEvent) {
+            year = eventsStore.selectedEvent.date.year();
         }
+
+        this.$router.push({ path: `/schedule/${year}` });
     }
 }
 </script>

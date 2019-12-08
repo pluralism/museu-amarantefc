@@ -48,7 +48,7 @@
                     <router-link
                             tag="button"
                             :class="'event__actions__details--available'"
-                            :to="{ path: `/events/${event.slug}`, query: { url: $route.fullPath } }"
+                            :to="{ path: `/events/${event.slug}` }"
                     >
                       <span>Ver detalhes</span>
                     </router-link>
@@ -69,7 +69,7 @@
 </template>
 
 <script lang="ts">
-import {Vue, Component, Watch} from "vue-property-decorator";
+import { Vue, Component, Watch } from "vue-property-decorator";
 import Calendar from "@/components/Calendar.vue";
 import moment from "moment";
 import eventsStore from '../stores/events.store';
@@ -89,12 +89,17 @@ export default class Schedule extends Vue {
 
   @Watch('$route')
   onRouteChange(value: any, oldValue: any) {
-    if (!value.query.replace) {
+    if (!value.query.replaced) {
       this.getInitialEvents(+this.$route.params.year);
     }
   }
 
   mounted() {
+    if (eventsStore.selectedEvent) {
+      this.date = eventsStore.selectedEvent.date;
+      eventsStore.getEvents(this.date.toDate());
+      return;
+    }
     this.getInitialEvents(+this.$route.params.year);
   }
 
@@ -139,7 +144,7 @@ export default class Schedule extends Vue {
     eventsStore.getEvents(this.date.toDate());
     
     if (this.date.year() !== year) {
-      this.$router.replace(`/schedule/${this.date.year()}?showImmediateEvents=${this.$route.query.showImmediateEvents}&replace=1`);
+      this.$router.replace(`/schedule/${this.date.year()}?replaced=1`);
     }
   }
 }
