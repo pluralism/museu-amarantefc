@@ -1,3 +1,5 @@
+import * as path from 'path';
+import * as fs from 'fs';
 import { CoreRouter } from "../core/core.router";
 import { Request, Response, NextFunction } from "express";
 import { Event } from "../models/event";
@@ -8,8 +10,32 @@ import server from "../server";
 
 class EventsRouter extends CoreRouter {
     setRoutes() {
+        this.router.get('/:slug', this.getEventBySlug);
         this.router.get('/', this.getEvents);
         this.router.post('/', this.createEvent);
+    }
+
+    private async getEventBySlug(req: Request, res: Response, next: NextFunction) {
+        try {
+            const slug = req.params.slug;
+            const collection = server.database.collection(Event.collection);
+            const result: Event = await collection.findOne({ slug: slug });
+
+            const imagesPath = path.join(process.env.EVENTS_IMAGES_PATH, slug);
+            if (fs.existsSync(imagesPath)) {
+                const filenames = fs.readdirSync(imagesPath).map(filename => {
+                    return `${slug}/${filename}`;
+                });
+                result.images = filenames;
+            } else {
+                result.images = [];
+            }
+            res.locals = new SuccessResponse(result);
+        } catch (err) {
+            res.locals = new ErrorResponse(err, 'Failed to get event by slug');
+        } finally {
+            next();
+        }
     }
 
     private async getEvents(req: Request, res: Response, next: NextFunction) {

@@ -2,6 +2,7 @@ import * as express from 'express';
 import * as http from 'http';
 import * as morgan from 'morgan';
 import * as bodyParser from 'body-parser';
+import * as cors from 'cors';
 
 import { Db, MongoClient } from 'mongodb';
 
@@ -44,12 +45,15 @@ class Server {
 
     private setupExpress() {
         this.app.use(morgan('dev'));
+        this.app.use(cors({ origin: '*' }));
         this.app.use(bodyParser.json({
             limit: '200kb'
         }));
     }
 
     private setRoutes() {
+        this.app.use('/eventsimages', express.static(process.env.EVENTS_IMAGES_PATH));
+
         this.app.use('/api/v1/about', aboutRouter);
         this.app.use('/api/v1/events', eventsRouter);
     }

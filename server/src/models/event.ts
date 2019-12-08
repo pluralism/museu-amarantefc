@@ -1,4 +1,4 @@
-import { IsString, MinLength, MaxLength, IsDate, IsNotEmpty } from 'class-validator';
+import { IsString, MinLength, MaxLength, IsDate, IsNotEmpty, IsArray, IsOptional } from 'class-validator';
 
 export class Event {
     static collection = 'events';
@@ -27,4 +27,8 @@ export class Event {
     @IsString()
     @IsNotEmpty()
     slug: string;
+
+    @IsOptional()
+    @IsArray()
+    images: string[];
 }

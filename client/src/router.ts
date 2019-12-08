@@ -44,7 +44,7 @@ export default new Router({
           component: GalleryComponent
         },
         {
-          path: 'events/:id',
+          path: 'events/:slug',
           component: EventDetailsComponent
         }
       ]

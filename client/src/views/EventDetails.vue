@@ -11,52 +11,23 @@
 
         <div class="event-details__container">
             <div class="event-details__title">
-                <h3>I Encontro Alvinegro</h3>
+                <h3>{{ event.title }}</h3>
             </div>
 
             <div class="event-details__content">
-                <h2 class="event-details__date">10 MARÇO 2018</h2>
-                <p>Lorem ipsum dolor sit amet, vel no vitae feugait senserit. Eius ignota similique sit at, vide partem vidisse duo eu. Erat tritani delenit ne mei. Eu vim percipitur philosophia, ea utinam placerat inimicus mei. Et tation fuisset evertitur cum, mel iusto option scriptorem ea. Probo nulla suscipit eos ad, aeque iudico sea ne, eum doming laboramus no. Vix tamquam consetetur et. Dolore ponderum omittantur ex cum, eius voluptatum complectitur te vel. Qui id tale platonem, nam ei unum munere.</p>
-                <p><b>Horários:</b> 10H30-12H00</p>
+                <h2 class="event-details__date">{{ event.date | formatEventDate }}</h2>
+                <p>{{ event.description }}</p>
             </div>
 
             <div class="event-details__place">
                 <h5>Local</h5>
-                <h3>Estádio Amarante FC - Amarante</h3>
+                <h3>{{ event.place }}</h3>
             </div>
         </div>
 
-        <div class="event-details__gallery">
-            <figure class="event-details__gallery__item">
-                <img src="../assets/events/encontro_alvinegro_1/2.jpg" alt="I Encontro Alvinegro">
-            </figure>
-
-            <figure class="event-details__gallery__item">
-                <img src="../assets/events/encontro_alvinegro_1/3.jpg" alt="I Encontro Alvinegro">
-            </figure>
-
-            <figure class="event-details__gallery__item">
-                <img src="../assets/events/encontro_alvinegro_1/4.jpg" alt="I Encontro Alvinegro">
-            </figure>
-
-            <figure class="event-details__gallery__item">
-                <img src="../assets/events/encontro_alvinegro_1/5.jpg" alt="I Encontro Alvinegro">
-            </figure>
-
-            <figure class="event-details__gallery__item">
-                <img src="../assets/events/encontro_alvinegro_1/6.jpg" alt="I Encontro Alvinegro">
-            </figure>
-
-            <figure class="event-details__gallery__item">
-                <img src="../assets/events/encontro_alvinegro_1/7.jpg" alt="I Encontro Alvinegro">
-            </figure>
-
-            <figure class="event-details__gallery__item">
-                <img src="../assets/events/encontro_alvinegro_1/8.jpg" alt="I Encontro Alvinegro">
-            </figure>
-
-            <figure class="event-details__gallery__item">
-                <img src="../assets/events/encontro_alvinegro_1/9.jpg" alt="I Encontro Alvinegro">
+        <div v-if="event.images && event.images.length > 0" class="event-details__gallery">
+            <figure v-for="image in event.images" class="event-details__gallery__item" :key="image">
+                <img :src="getImageUrl(image)" alt="I Encontro Alvinegro">
             </figure>
         </div>
     </div>
@@ -64,9 +35,33 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
+import moment from 'moment';
+import eventsStore from '../stores/events.store';
 
-@Component({ name: 'eventDetails' })
+@Component({ 
+    name: 'eventDetails',
+    filters: {
+        formatEventDate(value: Date) {
+            return moment(value)
+                .locale("pt")
+                .format("LL");
+        }
+    }
+})
 export default class EventDetails extends Vue {
+    mounted() {
+        const eventSlug = this.$route.params.slug;
+        eventsStore.getEventBySlug(eventSlug);
+    }
+
+    get event() {
+        return eventsStore.selectedEvent || Object.create(null);
+    }
+
+    private getImageUrl(img: string) {
+        return '/eventsimages/' + img;
+    }
+
     goBack() {
         if (this.$route.query.url) {
             // @ts-ignore

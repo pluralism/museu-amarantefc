@@ -37,8 +37,8 @@
                       <span>{{ event.title }}</span>
                     </div>
 
-                    <div class="description">
-                      <span>{{ event.description }}</span>
+                    <div class="place">
+                      <span>{{ event.place }}</span>
                     </div>
                   </div>
                 </div>
@@ -47,11 +47,10 @@
                   <div class="event__actions__details">
                     <router-link
                             tag="button"
-                            :class="'event__actions__details--' + (event.detailsLink ? 'available' : 'unavailable')"
-                            :to="{ path: event.detailsLink, query: { url: $route.fullPath } }"
+                            :class="'event__actions__details--available'"
+                            :to="{ path: `/events/${event.slug}`, query: { url: $route.fullPath } }"
                     >
-                      <span v-if="event.detailsLink">Ver detalhes</span>
-                      <span v-else>Detalhes indisponíveis</span>
+                      <span>Ver detalhes</span>
                     </router-link>
                   </div>
                 </div>
@@ -73,6 +72,7 @@
 import {Vue, Component, Watch} from "vue-property-decorator";
 import Calendar from "@/components/Calendar.vue";
 import moment from "moment";
+import eventsStore from '../stores/events.store';
 
 @Component({
   name: "schedule",
@@ -84,74 +84,30 @@ import moment from "moment";
   }
 })
 export default class Schedule extends Vue {
-  private events = [
-    {
-      date: moment(new Date(2018, 2, 10, 15, 0)),
-      title: "I Encontro Alvinegro",
-      description: "Estádio do Amarante FC",
-      detailsLink: "/events/i_encontro_alvinegro"
-    },
-    {
-      date: moment(new Date(2018, 2, 10, 18, 0)),
-      title: "I Prémio Alvinegro",
-      description: "Estádio do Amarante FC",
-      detailsLink: ""
-    },
-    {
-      date: moment(new Date(2018, 2, 10, 20, 0)),
-      title: "I Revista Alvinegro",
-      description: "Estádio do Amarante FC",
-      detailsLink: ""
-    },
-    {
-      date: moment(new Date(2019, 2, 9, 20, 0)),
-      title: "II Revista Alvinegro",
-      description: "Estádio do Amarante FC",
-      detailsLink: ""
-    },
-    {
-      date: moment(new Date(2019, 2, 9, 18, 0)),
-      title: "II Prémio Alvinegro",
-      description: "Estádio do Amarante FC",
-      detailsLink: ""
-    },
-    {
-      date: moment(new Date(2020, 2, 7, 16, 0)),
-      title: "III Prémio Alvinegro",
-      description: "Estádio do Amarante FC",
-      detailsLink: ""
-    }
-  ];
-
   private today = moment(new Date());
   private date = moment(new Date());
 
   @Watch('$route')
   onRouteChange(value: any, oldValue: any) {
-    const year = +value.params.year;
-    this.setInitialDate(year, oldValue, value.query.showImmediateEvents);
-  }
-
-  created() {
-    const year = +this.$route.params.year;
-    this.setInitialDate(year, 0, true);
-  }
-
-  setInitialDate(year: number, oldYear: number, showFirstEventOfYear?: boolean) {
-    if (year !== oldYear) {
-      if (showFirstEventOfYear) {
-        const filteredEvents = this.events.filter(event => event.date.year() === year);
-
-        if (filteredEvents.length > 0) {
-          this.date = filteredEvents[0].date.clone().date(1);
-          return;
-        }
-      }
-      
-      this.date = this.date.year(year).month(0).date(1).clone();      
-    } else {
-      this.date = this.today.clone();
+    if (!value.query.replace) {
+      this.getInitialEvents(+this.$route.params.year);
     }
+  }
+
+  mounted() {
+    this.getInitialEvents(+this.$route.params.year);
+  }
+
+  private getInitialEvents(year: number) {
+    const date = new Date();
+    date.setFullYear(year);
+
+    this.date = moment(date);
+    eventsStore.getEvents(date);
+  }
+
+  get events() {
+    return eventsStore.events;
   }
 
   get currentDate() {
@@ -159,9 +115,7 @@ export default class Schedule extends Vue {
   }
 
   get groupedEvents() {
-    const filteredEvents = this.events.filter(e => e.date.year() === this.currentDate.year() && e.date.month() === this.currentDate.month());
-
-    const grouped = filteredEvents.reduce((acc: { [key: number]: any }, current) => {
+    const grouped = this.events.reduce((acc: { [key: number]: any }, current: any) => {
       const day = current.date.date();
       if (!acc.hasOwnProperty(day)) {
         acc[day] = [];
@@ -182,8 +136,10 @@ export default class Schedule extends Vue {
   addMonth(ev: any) {
     const year = this.date.year();
     this.date = moment(this.date).add(ev, 'months').date(1).clone();
+    eventsStore.getEvents(this.date.toDate());
+    
     if (this.date.year() !== year) {
-      this.$router.replace(`/schedule/${this.date.year()}?showImmediateEvents=${this.$route.query.showImmediateEvents}`);
+      this.$router.replace(`/schedule/${this.date.year()}?showImmediateEvents=${this.$route.query.showImmediateEvents}&replace=1`);
     }
   }
 }
@@ -365,7 +321,7 @@ export default class Schedule extends Vue {
               color: #2c272f;
             }
 
-            & > .description {
+            & > .place {
               font-size: 1.4rem;
               color: #9ea3a1;
             }
