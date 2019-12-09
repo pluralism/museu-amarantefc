@@ -1,3 +1,4 @@
+import * as path from 'path';
 import * as express from 'express';
 import * as http from 'http';
 import * as morgan from 'morgan';
@@ -53,6 +54,7 @@ class Server {
 
     private setRoutes() {
         this.app.use('/eventsimages', express.static(process.env.EVENTS_IMAGES_PATH));
+        this.app.use('/docs/api', express.static(path.join(__dirname, 'docs', 'api')));
 
         this.app.use('/api/v1/about', aboutRouter);
         this.app.use('/api/v1/events', eventsRouter);
