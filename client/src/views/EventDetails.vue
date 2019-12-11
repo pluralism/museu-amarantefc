@@ -36,7 +36,6 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
 import moment from 'moment';
-import eventsStore from '../stores/events.store';
 
 @Component({ 
     name: 'eventDetails',
@@ -50,12 +49,12 @@ import eventsStore from '../stores/events.store';
 })
 export default class EventDetails extends Vue {
     mounted() {
-        const eventSlug = this.$route.params.slug;
-        eventsStore.getEventBySlug(eventSlug);
+        const slug = this.$route.params.slug;
+        this.$store.dispatch('getEventBySlug', { slug });
     }
 
     get event() {
-        return eventsStore.selectedEvent || Object.create(null);
+        return this.$store.getters.selectedEvent || Object.create(null);
     }
 
     private getImageUrl(img: string) {
@@ -64,8 +63,8 @@ export default class EventDetails extends Vue {
 
     goBack() {
         let year = new Date().getFullYear();
-        if (eventsStore.selectedEvent) {
-            year = eventsStore.selectedEvent.date.year();
+        if (this.$store.getters.selectedEvent) {
+            year = this.$store.getters.selectedEvent.date.year();
         }
 
         this.$router.push({ path: `/schedule/${year}` });

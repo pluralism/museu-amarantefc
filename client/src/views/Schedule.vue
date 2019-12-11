@@ -1,7 +1,5 @@
 <template>
   <div class="page">
-    <!-- <div class="loading-ring"></div> -->
-
     <div class="calendar">
       <Calendar :date="date" @update:addMonth="addMonth($event)" />
     </div>
@@ -72,7 +70,6 @@
 import { Vue, Component, Watch } from "vue-property-decorator";
 import Calendar from "@/components/Calendar.vue";
 import moment from "moment";
-import eventsStore from '../stores/events.store';
 
 @Component({
   name: "schedule",
@@ -95,9 +92,9 @@ export default class Schedule extends Vue {
   }
 
   mounted() {
-    if (eventsStore.selectedEvent) {
-      this.date = eventsStore.selectedEvent.date;
-      eventsStore.getEvents(this.date.toDate());
+    if (this.$store.getters.selectedEvent) {
+      this.date = this.$store.getters.selectedEvent.date;
+      this.$store.dispatch('getEvents', { date: this.date.toDate() });
       return;
     }
     this.getInitialEvents(+this.$route.params.year);
@@ -108,11 +105,11 @@ export default class Schedule extends Vue {
     date.setFullYear(year);
 
     this.date = moment(date);
-    eventsStore.getEvents(date);
+    this.$store.dispatch('getEvents', { date });
   }
 
   get events() {
-    return eventsStore.events;
+    return this.$store.getters.events;
   }
 
   get currentDate() {
@@ -141,7 +138,7 @@ export default class Schedule extends Vue {
   addMonth(ev: any) {
     const year = this.date.year();
     this.date = moment(this.date).add(ev, 'months').date(1).clone();
-    eventsStore.getEvents(this.date.toDate());
+    this.$store.dispatch('getEvents', { date: this.date.toDate() });
     
     if (this.date.year() !== year) {
       this.$router.replace(`/schedule/${this.date.year()}?replaced=1`);
@@ -157,41 +154,6 @@ export default class Schedule extends Vue {
   position: relative;
   display: flex;
   padding: 8rem 3rem;
-}
-
-.loading-ring {
-  $size: 6.4rem;
-
-  position: absolute;
-  z-index: 3;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-
-  &::after {
-    position: absolute;
-    content: "";
-    width: $size;
-    height: $size;
-    top: calc(50% - #{$size / 2});
-    left: calc(50% - #{$size / 2});
-    border: 5px solid;
-    border-color: #fff transparent #fff transparent;
-    border-radius: 50%;
-    animation: lds-dual-ring 1.2s ease-in-out infinite;
-  }
-}
-
-@keyframes lds-dual-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 .calendar {
