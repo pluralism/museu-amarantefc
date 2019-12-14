@@ -9,9 +9,10 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
     plugins: [createLogger()],
     state: {
+        loadingData: false,
         events: [],
         selectedEvent: null,
-        baseApiUrl: 'events'
+        eventsApiUrl: 'events'
     },
     mutations: {
         clearEvents(state) {
@@ -23,32 +24,49 @@ export const store = new Vuex.Store({
         },
         setSelectedEvent(state, event) {
             state.selectedEvent = event;
+        },
+        setLoadingData(state, value) {
+            state.loadingData = value;
         }
     },
     getters : {
         events: state => state.events,
         selectedEvent: state => state.selectedEvent,
+        isLoadingData: state => state.loadingData
     },
     actions: {
-        getEvents({ commit, state }, payload) {
-            const date = payload.date || new Date();
-            commit('clearEvents');
-            API().get(state.baseApiUrl, { params: { date: date.toISOString() }}).then((res: any) => {
+        async getEvents({ commit, state }, payload) {
+            try {
+                const date = payload.date || new Date();
+                commit('clearEvents');
+                commit('setLoadingData', true);
+                const res = await API().get(state.eventsApiUrl, { params: { date: date.toISOString() }});
                 const { data } = res.data;
                 for (const event of data) {
                     event.date = moment(event.date);
                     commit('addEvent', event);
                 }
-            });
+            } catch (err) {
+                console.error('[getEvents] error on action:', err);
+            } finally {
+                commit('setLoadingData', false);
+            }
         },
-        getEventBySlug({ commit, state }, payload) {
-            const slug = payload.slug || '';
-
-            API().get(`${state.baseApiUrl}/${slug}`).then((res: any) => {
+        async getEventBySlug({ commit, state }, payload) {
+            try {
+                const slug = payload.slug || '';
+                commit('setLoadingData', true);
+                const res = await API().get(`${state.eventsApiUrl}/${slug}`);
                 const { data } = res.data;
                 data.date = moment(data.date);
                 commit('setSelectedEvent', data);
-            });
+            } catch (err) {
+                console.log('[getEventBySlug] error on action:', err);
+            } finally {
+                setTimeout(() => {
+                    commit('setLoadingData', false);
+                }, 2000);
+            }
         }
     }
 });
