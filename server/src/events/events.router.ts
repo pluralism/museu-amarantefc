@@ -31,6 +31,13 @@ class EventsRouter extends CoreRouter {
                 result.images = [];
             }
 
+            const date = new Date();
+            const redisDayKey = `events:${result._id.toHexString()}:views:date:${date.getUTCFullYear()}${date.getUTCMonth() + 1}${date.getUTCDate()}`;
+            const redisTotalKey = `events:${result._id.toHexString()}:views:total`;
+            server.redis.multi()
+                .incr(redisDayKey)
+                .incr(redisTotalKey)
+                .exec();
             res.locals = new SuccessResponse(result);
         } catch (err) {
             res.locals = new ErrorResponse(err, 'Failed to get event by slug');

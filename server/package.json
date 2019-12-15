@@ -11,13 +11,15 @@
   "author": "André Pinheiro <andrepdpinheiro@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@types/redis": "^2.8.14",
     "body-parser": "^1.19.0",
     "class-validator": "^0.11.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongodb": "^3.3.5",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "redis": "^2.8.0"
   },
   "devDependencies": {
     "@types/body-parser": "^1.17.1",

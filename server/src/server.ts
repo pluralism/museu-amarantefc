@@ -6,6 +6,7 @@ import * as bodyParser from 'body-parser';
 import * as cors from 'cors';
 
 import { Db, MongoClient } from 'mongodb';
+import * as redis from 'redis';
 
 import coreMiddlewares from './core/core.middlewares';
 import { aboutRouter } from './about/about.router';
@@ -15,13 +16,19 @@ import { eventsIndexes } from './events/events.indexes';
 class Server {
     private app: express.Application;
     private db: Db;
+    private redisClient: redis.RedisClient;
 
     constructor() {
         this.app = express();
+        this.redisClient = redis.createClient();
     }
 
     get database() {
         return this.db;
+    }
+
+    get redis() {
+        return this.redisClient;
     }
 
     async bootstrap() {

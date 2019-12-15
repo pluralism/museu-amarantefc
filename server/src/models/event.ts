@@ -1,7 +1,12 @@
-import { IsString, MinLength, MaxLength, IsDate, IsNotEmpty, IsArray, IsOptional } from 'class-validator';
+import { IsString, MinLength, MaxLength, IsDate, IsNotEmpty, IsArray, IsOptional, IsMongoId } from 'class-validator';
+import { ObjectId } from 'mongodb';
 
 export class Event {
     static collection = 'events';
+
+    @IsMongoId()
+    @IsOptional()
+    _id: ObjectId;
 
     @IsDate()
     date: Date;
