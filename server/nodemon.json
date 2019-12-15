@@ -1,0 +1,8 @@
+{
+    "env": {
+        "PORT": 8080,
+        "REDIS_URL": "redis://localhost:6379",
+        "MONGO_URL": "mongodb://localhost:27017",
+        "EVENTS_IMAGES_PATH": "D:\\museuamarantefc_images"
+    }
+}

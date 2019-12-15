@@ -20,7 +20,6 @@ class Server {
 
     constructor() {
         this.app = express();
-        this.redisClient = redis.createClient();
     }
 
     get database() {
@@ -33,6 +32,7 @@ class Server {
 
     async bootstrap() {
         require('dotenv').config({ path: './main.env', encoding: 'utf8' });
+        this.connectToRedis();
         await this.connectDb();
         await this.createDbIndexes();
 
@@ -46,8 +46,15 @@ class Server {
         await eventsIndexes.createIndexes();
     }
 
+    private connectToRedis() {
+        this.redisClient = redis.createClient({ url: process.env.REDIS_URL });
+        this.redisClient.on('error', err => {
+            console.log('[connectToRedis] error:', err);
+        });
+    }
+
     private async connectDb() {
-        const mongoClient = await MongoClient.connect(process.env.CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true });
+        const mongoClient = await MongoClient.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true });
         this.db = mongoClient.db(process.env.DB_NAME);
     }
 
@@ -60,6 +67,8 @@ class Server {
     }
 
     private setRoutes() {
+        this.app.use(express.static(path.join(__dirname, 'client')));
+
         this.app.use('/eventsimages', express.static(process.env.EVENTS_IMAGES_PATH));
         this.app.use('/docs/api', express.static(path.join(__dirname, 'docs', 'api')));
 

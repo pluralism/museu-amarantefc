@@ -5,5 +5,6 @@ module.exports = {
                 target: 'http://localhost:8080'
             }
         }
-    }
+    },
+    "outputDir": "../server/build/client/"
 };
