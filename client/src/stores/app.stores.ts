@@ -63,9 +63,7 @@ export const store = new Vuex.Store({
             } catch (err) {
                 console.log('[getEventBySlug] error on action:', err);
             } finally {
-                setTimeout(() => {
-                    commit('setLoadingData', false);
-                }, 2000);
+                commit('setLoadingData', false);
             }
         }
     }

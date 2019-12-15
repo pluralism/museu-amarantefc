@@ -30,6 +30,7 @@ class EventsRouter extends CoreRouter {
             } else {
                 result.images = [];
             }
+
             res.locals = new SuccessResponse(result);
         } catch (err) {
             res.locals = new ErrorResponse(err, 'Failed to get event by slug');

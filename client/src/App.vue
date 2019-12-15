@@ -79,6 +79,7 @@ body {
     height: 0;
     opacity: 1;
   }
+  
   100% {
     top: 0;
     left: 0;
