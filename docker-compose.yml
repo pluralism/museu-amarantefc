@@ -5,6 +5,7 @@ services:
         environment:
             REDIS_URL: redis://redis:6379
             MONGO_URL: mongodb://db:27017
+            DB_NAME: museuamarantefc
             PORT: 8080
             EVENTS_IMAGES_PATH: /museuamarantefc_images
         depends_on:
@@ -23,7 +24,7 @@ services:
     db:
         image: "mongo"
         ports:
-            - "27017:27017"
+            - "27018:27017"
         volumes:
             - mongodata:/data/db
 

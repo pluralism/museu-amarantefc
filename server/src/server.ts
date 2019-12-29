@@ -31,7 +31,6 @@ class Server {
     }
 
     async bootstrap() {
-        require('dotenv').config({ path: './main.env', encoding: 'utf8' });
         this.connectToRedis();
         await this.connectDb();
         await this.createDbIndexes();

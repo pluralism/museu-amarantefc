@@ -14,9 +14,6 @@ RUN rm -rf node_modules
 RUN npm install
 RUN npm run tsc
 
-WORKDIR /home/root/server
-RUN cp ./main.env ./build
-
 EXPOSE 8080
 
 WORKDIR /home/root/server/build
