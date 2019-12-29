@@ -7,12 +7,12 @@ services:
             MONGO_URL: mongodb://db:27017
             PORT: 8080
             EVENTS_IMAGES_PATH: /museuamarantefc_images
-        depends_on: 
+        depends_on:
             - redis
             - db
         ports: 
             - "8080:8080"
-        volumes: 
+        volumes:
             - D:/museuamarantefc_images:/museuamarantefc_images
     redis:
         image: "redis"

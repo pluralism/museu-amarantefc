@@ -32,7 +32,7 @@ import { Vue, Component } from 'vue-property-decorator';
 
 @Component({ name: 'history' })
 export default class History extends Vue {
-  private historyItems = [
+  historyItems = [
     {
       year: 1923,
       text: 'No dia 4 de março, é fundado o Amarante FC por intermédio de Pompeu da Cunha Brochado, com apenas 19 anos. A 31 de maio realiza o Clube o primeiro encontro de futebol. Foi adversário o Stª. Natália, no qual saiu vencedor por 4-0',
@@ -216,7 +216,7 @@ export default class History extends Vue {
               .image {
                 position: relative;
                 width: 50%;
-                max-height: 40rem;
+                height: 40rem;
                 padding: 2.4rem 2rem;
 
                 display: flex;
