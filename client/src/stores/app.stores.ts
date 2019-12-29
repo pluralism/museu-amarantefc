@@ -12,7 +12,7 @@ export const store = new Vuex.Store({
         loadingData: false,
         events: [],
         selectedEvent: null,
-        eventsApiUrl: 'events'
+        eventsApiUrl: 'api/v1/events'
     },
     mutations: {
         clearEvents(state) {
@@ -42,9 +42,11 @@ export const store = new Vuex.Store({
                 commit('setLoadingData', true);
                 const res = await API().get(state.eventsApiUrl, { params: { date: date.toISOString() }});
                 const { data } = res.data;
-                for (const event of data) {
-                    event.date = moment(event.date);
-                    commit('addEvent', event);
+                if (data) {
+                    for (const event of data) {
+                        event.date = moment(event.date);
+                        commit('addEvent', event);
+                    }
                 }
             } catch (err) {
                 console.error('[getEvents] error on action:', err);
