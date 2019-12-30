@@ -37,10 +37,10 @@ export const store = new Vuex.Store({
     actions: {
         async getEvents({ commit, state }, payload) {
             try {
-                const date = payload.date || new Date();
+                const date = payload.date || moment();
                 commit('clearEvents');
                 commit('setLoadingData', true);
-                const res = await API().get(state.eventsApiUrl, { params: { date: date.toISOString() }});
+                const res = await API().get(state.eventsApiUrl, { params: { date: new Date(date).toISOString() }});
                 const { data } = res.data;
                 if (data) {
                     for (const event of data) {

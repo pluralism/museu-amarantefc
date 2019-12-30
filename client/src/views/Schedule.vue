@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <div class="calendar">
-      <Calendar :date="date" @update:addMonth="addMonth($event)" />
+      <Calendar :date="date" @update:month="updateMonth($event)" />
     </div>
 
     <div class="schedule">
@@ -94,7 +94,7 @@ export default class Schedule extends Vue {
   mounted() {
     if (this.$store.getters.selectedEvent) {
       this.date = this.$store.getters.selectedEvent.date;
-      this.$store.dispatch('getEvents', { date: this.date.toDate() });
+      this.$store.dispatch('getEvents', { date: this.date.utc() });
       return;
     }
     this.getInitialEvents(+this.$route.params.year);
@@ -105,7 +105,7 @@ export default class Schedule extends Vue {
     date.setFullYear(year);
 
     this.date = moment(date);
-    this.$store.dispatch('getEvents', { date });
+    this.$store.dispatch('getEvents', { date: this.date.utc() });
   }
 
   get events() {
@@ -135,10 +135,10 @@ export default class Schedule extends Vue {
     return grouped;
   }
 
-  addMonth(ev: any) {
+  updateMonth(amount: any) {
     const year = this.date.year();
-    this.date = moment(this.date).add(ev, 'months').date(1).clone();
-    this.$store.dispatch('getEvents', { date: this.date.toDate() });
+    this.date = moment(this.date).startOf('month').add(amount, 'months').clone();
+    this.$store.dispatch('getEvents', { date: this.date.utc() });
     
     if (this.date.year() !== year) {
       this.$router.replace(`/schedule/${this.date.year()}?replaced=1`);

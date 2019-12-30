@@ -1,7 +1,7 @@
 <template>
     <div class="calendar">
         <div class="calendar__controls">
-            <button class="calendar__controls__prev" @click="addMonth(-1)">
+            <button class="calendar__controls__prev" @click="updateMonth(-1)">
                 <svg width="14" height="10" viewBox="0 0 14 10">
                     <path d="M5.06 0l.891.881-3.529 3.494L14 4.432v1.25L2.422 5.625l3.529 3.494-.892.881L0 5z" fill="#2c272f" fill-rule="evenodd"></path>
                 </svg>
@@ -11,7 +11,7 @@
                 <span>{{ date | formatMonthName }} {{ date.year() }}</span>
             </div>
 
-            <button class="calendar__controls__next" @click="addMonth(1)">
+            <button class="calendar__controls__next" @click="updateMonth(1)">
                 <svg width="14" height="10" viewBox="8 10 14 10">
                     <path d="M16.94 10l-.891.881 3.529 3.494L8 14.432v1.25l11.578-.057-3.529 3.494.892.881L22 15z" fill="#2c272f" fill-rule="evenodd"></path>
                 </svg>
@@ -47,14 +47,13 @@
         filters: {
             formatMonthName(value: Date) {
                 return moment(value)
-                    .locale("pt")
                     .format("MMMM")
             },
         }
     })
     export default class Calendar extends Vue {
-        addMonth(n: number) {
-            this.$emit('update:addMonth', n);
+        updateMonth(n: number) {
+            this.$emit('update:month', n);
         }
 
         get dates() {
