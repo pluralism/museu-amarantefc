@@ -1,5 +1,17 @@
 <template>
     <div class="gallery">
+        <div class="gallery__videos__container">
+            <div class="gallery__video__item gallery__video__item--1">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/u7aCs7JDJOY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+            </div>
+
+            <div class="gallery__video__item gallery__video__item--2">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/R7d-c9BUJPg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+            </div>
+        </div>
+
+        <hr class="gallery__divider" />
+
         <div class="gallery__container">
             <figure v-for="image in images" :key="image.id"
             :class="{'gallery__item': true, ['gallery__item--' + image.id]: true}">
@@ -62,11 +74,46 @@ export default class Gallery extends Vue {
     .gallery {
         padding: 8rem;
 
+        &__divider {
+            width: 80%;
+            margin: 3rem auto 3rem;
+            border-top: 1px solid var(--color-primary);
+        }
+
         &__container {
             display: grid;
             grid-template-columns: repeat(8, 1fr);
             grid-template-rows: repeat(8, 5vw);
             grid-gap: 1.5rem;
+        }
+
+        &__videos__container {
+            display: grid;
+            grid-template-columns: 2fr .5fr 2fr;
+            justify-items: center;
+        }
+
+        &__video__item {
+            position: relative;
+            padding-bottom: 56.25%;
+            width: 100%;
+            height: 0;
+
+            & > iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            &--1 {
+                grid-column: 1 / 2;
+            }
+
+            &--2 {
+                grid-column: 3 / -1;
+            }
         }
 
         &__item {
