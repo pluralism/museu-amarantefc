@@ -45,10 +45,16 @@ export default class Installations extends Vue {
         },
         {
             id: 5,
-            name: 'Estádio Municipal de Amarante',
-            yearRange: '1981-Presente',
-            image: require('../assets/installations/5_estadio.jpg'),
+            name: 'Estádio Municipal de Amarante (2004)',
+            yearRange: '1981-2004',
+            image: require('../assets/installations/5_estadio_2004.jpg'),
         },
+        {
+           id: 6,
+           name: 'Estádio Municipal de Amarante',
+           yearRange: '2004-Presente',
+           image: require('../assets/installations/6_estadio_2020.jpg'),
+        }
     ];
 }
 </script>
@@ -60,7 +66,7 @@ export default class Installations extends Vue {
         &__container {
             display: grid;
             grid-template-columns: repeat(10, 1fr);
-            grid-template-rows: repeat(14, 5vw);
+            grid-template-rows: repeat(24, 5vw);
             grid-gap: 1.5rem;
         }
 
@@ -120,7 +126,12 @@ export default class Installations extends Vue {
 
             &--5 {
                 grid-column: 1 / -1;
-                grid-row: 9 / -1;
+                grid-row: 9 / 19;
+            }
+
+            &--6 {
+                grid-column: 1 / -1;
+                grid-row: 19 / -1;
             }
         }
     }
