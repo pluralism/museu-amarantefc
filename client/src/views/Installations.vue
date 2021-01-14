@@ -45,14 +45,14 @@ export default class Installations extends Vue {
         },
         {
             id: 5,
-            name: 'Estádio Municipal de Amarante (2004)',
-            yearRange: '1981-2004',
+            name: 'Estádio Municipal de Amarante (2006)',
+            yearRange: '1981-2006',
             image: require('../assets/installations/5_estadio_2004.jpg'),
         },
         {
            id: 6,
            name: 'Estádio Municipal de Amarante',
-           yearRange: '2004-Presente',
+           yearRange: '2006-Presente',
            image: require('../assets/installations/6_estadio_2020.jpg'),
         }
     ];
