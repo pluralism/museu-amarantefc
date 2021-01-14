@@ -16,7 +16,7 @@
 
             <div class="event-details__content">
                 <h2 class="event-details__date">{{ event.date | formatEventDate }}</h2>
-                <p>{{ event.description }}</p>
+                <p v-html="event.description"></p>
             </div>
 
             <div class="event-details__place">
