@@ -211,6 +211,10 @@
                         name: 'Jorge Augusto Queirós Monteiro'
                     },
                     {
+                        interval: '1997/05',
+                        name: 'José Morais Clemente Teixeira'
+                    },
+                    {
                         interval: '2006/08',
                         name: 'Joaquim Moreira Ferreira'
                     },
@@ -219,13 +223,17 @@
                         name: 'António Mendes Cardoso'
                     },
                     {
-                        interval: '2009/2013',
+                        interval: '2009/13',
                         name: 'Eduardo Jorge Medeiros Pinto'
                     },
                     {
                         interval: '2013/19',
                         name: 'António Augusto Magalhães Duarte'
                     },
+                    {
+                        interval: '2019/21',
+                        name: 'António Joaquim Silva Pinto Costa'
+                    }
                 ]
             };
         }
