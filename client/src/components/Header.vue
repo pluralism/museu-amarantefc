@@ -40,6 +40,10 @@
           <div class="submenu">
             <ul class="submenu-nav">
               <li class="submenu-nav__item">
+                <router-link tag="div" :to="{ path: '/schedule/2021' }">
+                  <span>2021</span>
+                </router-link>
+
                 <router-link tag="div" :to="{ path: '/schedule/2020' }">
                   <span>2020</span>
                 </router-link>
