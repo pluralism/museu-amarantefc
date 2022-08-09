@@ -26,7 +26,7 @@
         </div>
 
         <div v-if="event.images && event.images.length > 0" class="event-details__gallery">
-            <figure v-for="image in sortEventImages(event).images" class="event-details__gallery__item" :key="image">
+            <figure v-for="image in eventSortedImages" class="event-details__gallery__item" :key="image">
                 <img :src="getImageUrl(image)" alt="I Encontro Alvinegro">
             </figure>
         </div>
@@ -57,15 +57,16 @@ export default class EventDetails extends Vue {
         return this.$store.getters.selectedEvent || Object.create(null);
     }
 
-    private getImageUrl(img: string) {
-        return '/eventsimages/' + img;
-    }
-
-    private sortEventImages(event: any) {
-        event.images.sort(
+    get eventSortedImages() {
+        const copy = [...this.event.images];
+        copy.sort(
             (a: string, b: string) => parseInt(a.split('/')[1]) > parseInt(b.split('/')[1]) ? 1 : -1
         );
-        return event;
+        return copy;
+    }
+
+    private getImageUrl(img: string) {
+        return '/eventsimages/' + img;
     }
 
     goBack() {
