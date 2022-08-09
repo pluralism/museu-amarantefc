@@ -62,7 +62,9 @@ export default class EventDetails extends Vue {
     }
 
     private sortEventImages(event: any) {
-        event.images.sort((a: string, b: string) => Number(a.split('.')[0]) > Number(b.split('.')[0]) ? 1 : -1);
+        console.log(event.images);
+        console.log(event.images[0]);
+        //event.images.sort((a: string, b: string) => Number(a.split('.')[0]) > Number(b.split('.')[0]) ? 1 : -1);
         return event;
     }
 
