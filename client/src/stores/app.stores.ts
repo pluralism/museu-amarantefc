@@ -1,6 +1,6 @@
 import { Vue } from 'vue-property-decorator';
 import Vuex from 'vuex';
-import createLogger from 'vuex/dist/logger';
+import { createLogger } from 'vuex';
 import moment from 'moment';
 import API from '../axios/axios';
 
